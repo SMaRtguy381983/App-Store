@@ -9,7 +9,13 @@ npm install
 
 Install all command line tools
 ```
-npm i -g mocha nodemon
+npm i -g mocha
+
+npm i mocha --save-dev
+
+npm i chai --save-dev
+
+npm i -g nodemon
 ```
 
 
@@ -17,7 +23,11 @@ npm i -g mocha nodemon
 
 To run the server with default setting run
 ```
-npm start
+node src/server.js
+
+-or-
+
+nodemon src/server.js
 ```
 
 
@@ -25,7 +35,7 @@ npm start
 
 To run the unit tests
 ```
-npm test
+mocha
 ```
 
 
