@@ -3,9 +3,14 @@ const express = require('express');
 const body_parser = require('body-parser');
 const app = express();
 
-// Here I set up the port that the API will connect to,
-// for purposes of the assignment I will use 3000
-const port = 3000;
+
+const port = process.env.PORT || 3000;
+
+
+app.use(body_parser.json());
+app.use(body_parser.urlencoded({
+  extended: true,
+}));
 
 // This line will call the api.js file and pass the remaining route, after /api/v1/, to the api.js route controller.
 app.use('/api/v1', require('../routes/api.js')(express));

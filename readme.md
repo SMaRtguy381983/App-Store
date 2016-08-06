@@ -130,6 +130,6 @@ This route will GET one (1) user and return the result as an object.
 ```
 
 ## Versioning
-http://semver.org/spec/v2.0.0.html
+Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
 ###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
