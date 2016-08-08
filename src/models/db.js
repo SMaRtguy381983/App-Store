@@ -68,14 +68,15 @@ const user = sequelize.define('user', {
 });
 
 // Here is the foreignKey to link the app and artAssets tables, and establishes that apps can have muliple artAssets
-app.hasMany(artAssets, {
-  foreignKey: 'appID',
+app.hasMany(artAsset, {
+  foreignKey: 'appId',
 })
 
 // Here is the foreignKey to link the user and users tables, and establishes that users can have muliple apps
 user.hasMany(app, {
-  foreignKey: 'userID',
+  foreignKey: 'userId',
 })
+app.belongsTo(user);
 
 // Here I sync the above information and populate the appStore database
 sequelize.sync();

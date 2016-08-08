@@ -5,7 +5,12 @@ module.exports = (express) => {
 
   // This route will Read All Applications
   router.get('/apps', (req, res) => {
-    app.all( (err) => {
+    app.all( {
+      include: [{
+        all: true,
+        nested: true,
+      }]
+    }, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
@@ -53,12 +58,20 @@ module.exports = (express) => {
   });
 
   // This route will Read All Applications for User
-  router.post('/apps/:id/apps', (req, res) => {
-    // app.create(req.body, (err) => {
-    //   res.status(500).json(err);
-    // }, (data) => {
-      res.status(200).json(/*data*/);
-    // })
+  router.get('/users/:id/apps', (req, res) => {
+    app.all({
+      where: {
+        userID: req.params.id
+      },
+      include: [{
+        all: true,
+        nested: true,
+      }]
+    }, req.body, (err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.status(200).json(data);
+    })
   });
 
   return router;

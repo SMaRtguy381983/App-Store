@@ -11,7 +11,12 @@ describe('App Model', () => {
 
   // Test for all Apps
   it('Gets All', (done) => {
-    App.all(
+      App.all({
+        include: [{
+          all: true,
+          nested: true,
+        }]
+      },
       (err) => {
         throw new Error(err);
       },
