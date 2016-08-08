@@ -27,7 +27,7 @@ describe('App Model', () => {
   it('Adds a new App', (done) => {
 
     // Generate a fake App with a random title
-    const fakeApp = { title: faker.name.firstName() };
+    const fakeApp = { title: faker.name.firstName(), description:'' };
 
     // Call app model for adding
     App.add(fakeApp,
@@ -72,7 +72,7 @@ describe('App Model', () => {
     // Load in the info for an existing app
     var updateApp = this.tempApp;
 
-    // Generate a new title for hte app
+    // Generate a new title for the app
     updateApp.title = 'Not A Real Name';
 
     // Call app model for updating

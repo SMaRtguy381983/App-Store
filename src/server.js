@@ -13,7 +13,7 @@ app.use(body_parser.urlencoded({
 }));
 
 // This line will call the api.js file and pass the remaining route, after /api/v1/, to the api.js route controller.
-app.use('/api/v1', require('../routes/api.js')(express));
+app.use('/', require('./routes')(express));
 
 // This code starts the server and prints a console.log to the terminal
 const server = app.listen(port, () => {

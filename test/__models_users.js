@@ -27,7 +27,7 @@ describe('User Model', () => {
   it('Adds a new User', (done) => {
 
     // Generate a fake User with a random name
-    const fakeUser = { name: faker.name.firstName() };
+    const fakeUser = { name: faker.name.firstName(), description:'' };
 
     // Call user model for adding
     User.add(fakeUser,
@@ -72,7 +72,7 @@ describe('User Model', () => {
     // Load in the info for an existing user
     var updateUser = this.tempUser;
 
-    // Generate a new name for hte user
+    // Generate a new name for the user
     updateUser.name = 'Not A Real Name';
 
     // Call user model for updating

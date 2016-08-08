@@ -1,19 +1,24 @@
 const db = require('./db');
 
-exports.create = (payload, err, success) => {
-  db.apps.create(payload).then(success).catch(err);
+exports.add = (payload, err, success) => {
+  db.app.create(payload).then(success).catch(err);
 }
 
-
-exports.findAll = (err, success) => {
-  db.apps.findAll().then(success).catch(err);
+exports.all = (err, success) => {
+  db.app.findAll({
+    include: [{
+      all: true,
+      nested: true,
+    }]
+}).then(success).catch(err);
 }
 
-exports.find = (payload, err, success) => {
-  db.apps.find({
+exports.one = (payload, err, success) => {
+  db.app.find({
     where: {
       id: payload.id,
     },
+    
     // find all relations in sequelize
     include: [{
       all: true,
@@ -23,17 +28,17 @@ exports.find = (payload, err, success) => {
 }
 
 exports.update = (payload, err, success) => {
-  db.apps.find({
+  db.app.find({
     where: {
       id: payload.id,
     }
-  }).then (existingData) => {
+  }).then( (existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
 }
 
-exports.destroy = (payload, err, success) => {
-  db.apps.destroy({
+exports.remove = (payload, err, success) => {
+  db.app.destroy({
     where: {
       id: payload.id,
     }

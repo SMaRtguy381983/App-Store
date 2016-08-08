@@ -18,12 +18,12 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 // Here is the schema for the apps table in my appStore database
-const apps = sequelize.define('apps',{
+const app = sequelize.define('app',{
   id: {
-    type: Sequelize.STRING,
+    type: Sequelize.UUID,
     allowNull: false,
     primaryKey: true,
-    unique: true
+    defaultValue: Sequelize.UUIDV4
   },
   title: {
     type: Sequelize.STRING,
@@ -31,7 +31,7 @@ const apps = sequelize.define('apps',{
     unique: true
   },
   description: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
     allowNull: false
   },
   releaseDate: {
@@ -42,7 +42,7 @@ const apps = sequelize.define('apps',{
 });
 
 // Here is the schema for the artAssets table in the appStore database
-const artAssets = sequelize.define('artAssets',{
+const artAsset = sequelize.define('artAsset',{
   title: {
     type: Sequelize.STRING,
     allowNull: false
@@ -54,12 +54,12 @@ const artAssets = sequelize.define('artAssets',{
 });
 
 // Here is the schema for the users table in the appStore database
-const user = sequelize.define('users', {
+const user = sequelize.define('user', {
   id: {
-    type: Sequelize.STRING,
-    allowNull: false,
+    type: Sequelize.UUID,
+    unique: true,
     primaryKey: true,
-    unique: true
+    defaultValue: Sequelize.UUIDV4
   },
   name: {
     type: Sequelize.STRING,
@@ -67,20 +67,20 @@ const user = sequelize.define('users', {
   },
 });
 
-// Here is the foreignKey to link the apps and artAssets tables
-apps.hasMany(artAssets, {
-  foreignKey: 'appID'
+// Here is the foreignKey to link the app and artAssets tables, and establishes that apps can have muliple artAssets
+app.hasMany(artAssets, {
+  foreignKey: 'appID',
 })
 
-// Here is the foreignKey to link the apps and users tables
-apps.hasMany(user, {
-  foreignKey: 'appID',
+// Here is the foreignKey to link the user and users tables, and establishes that users can have muliple apps
+user.hasMany(app, {
+  foreignKey: 'userID',
 })
 
 // Here I sync the above information and populate the appStore database
 sequelize.sync();
 
 exports.sequelize = sequelize;
-exports.apps = apps;
-exports.artAssets = artAssets;
-exports.users = users;
+exports.app = app;
+exports.artAsset = artAsset;
+exports.user = user;

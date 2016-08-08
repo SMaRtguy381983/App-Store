@@ -1,21 +1,21 @@
-const user = require('../../models/users')
+const user = require('../../models/user')
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Read All
+  // This route will Read All Users
   router.get('/users', (req, res) => {
-    user.findAll( (err) => {
+    user.all( (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
   });
 
-  // Read One
+  // This route will Read a User
   router.get('/users/:id', (req, res) => {
     req.body.id = req.params.id;
-    user.find(req.body, (err) => {
+    user.one(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
@@ -23,17 +23,17 @@ module.exports = (express) => {
   });
 
 
-  // Delete
+  // This route will Delete a User
   router.delete('/users/:id', (req, res) => {
     req.body.id = req.params.id;
-    user.destroy(req.body, (err) => {
+    user.remove(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
   });
 
-  // Update
+  // This route will Update a User
   router.post('/users/:id', (req, res) => {
     req.body.id = req.params.id;
     user.update(req.body, (err) => {
@@ -43,9 +43,9 @@ module.exports = (express) => {
     })
   });
 
-  // Create
+  // This route will Create a User
   router.post('/users', (req, res) => {
-    user.create(req.body, (err) => {
+    user.add(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);

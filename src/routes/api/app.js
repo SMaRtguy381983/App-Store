@@ -1,21 +1,21 @@
-const user = require('../../models/apps')
+const app = require('../../models/app')
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Read All
+  // This route will Read All Applications
   router.get('/apps', (req, res) => {
-    user.findAll( (err) => {
+    app.all( (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
   });
 
-  // Read One
+  // This route will Read One Application
   router.get('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
-    user.find(req.body, (err) => {
+    app.one(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
@@ -23,33 +23,42 @@ module.exports = (express) => {
   });
 
 
-  // Delete
+  // This route will Delete an Application
   router.delete('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
-    user.destroy(req.body, (err) => {
+    app.remove(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
   });
 
-  // Update
+  // This route will Update an Application
   router.post('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
-    user.update(req.body, (err) => {
+    app.update(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
   });
 
-  // Create
+  // This route will Create an Application
   router.post('/apps', (req, res) => {
-    user.create(req.body, (err) => {
+    app.add(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
     })
+  });
+
+  // This route will Read All Applications for User
+  router.post('/apps/:id/apps', (req, res) => {
+    // app.create(req.body, (err) => {
+    //   res.status(500).json(err);
+    // }, (data) => {
+      res.status(200).json(/*data*/);
+    // })
   });
 
   return router;
