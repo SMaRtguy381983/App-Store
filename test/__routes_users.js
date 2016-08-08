@@ -48,7 +48,7 @@ describe('User Routes', () => {
   // Test for the Apps of a Specific user
   it('GET /api/v1/users/:id/apps should find all apps for a user', (done) => {
 
-    const newApp = { title: 'Best New Test App', description: 'none', userId: this.user.id };
+    const newApp = { id: 'asdf', title: 'Best New Test App', description: 'none', userId: this.user.id };
       // console.log(newApp.userId);
 
     App.add(newApp, (err) => {
@@ -64,7 +64,12 @@ describe('User Routes', () => {
           // Save one single app from the list to test on in later tests
           expect(apps.length).to.be.above(0)
         })
-        .end(done)
+        App.remove(newApp, (err) => {
+
+        }, (response) => {
+
+            done();
+        });
       });
     });
 });
