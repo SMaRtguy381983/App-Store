@@ -4,13 +4,14 @@
   "description": "App Store for Deployment of Web Applications",
   "main": "src/server.js",
   "scripts": {
-      "start" : "node src/server.js",
-      "test": "mocha --reporter spec test"
+    "start": "node src/server.js",
+    "test": "mocha --reporter spec test"
   },
   "author": "Shaun Rogers",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
     "express": "^4.14.0",
     "mysql": "^2.11.1",
     "sequelize": "^3.23.6"

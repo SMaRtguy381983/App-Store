@@ -5,7 +5,7 @@ const fs = require('fs');
 module.exports = {
 
   // Create new function for module
-  debug: (msg, obj) => { // this is going to have a lot of errors, just need to rename log to debug.
+  debug: (msg, obj) => { 
 
     // Get debug status
     let debugging = process.env.DEBUG;
