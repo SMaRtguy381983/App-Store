@@ -18,18 +18,20 @@ module.exports = {
       // Get current time
       let timestamp = new Date();
 
+      let text;
       // Make a string of our text
-      if (level == 0){
-        text = error;
-      }
-      if (level == 1){
-        text = success;
-      }
-      let text = '\n' + timestamp + '\n' + msg + '\n';
+
+
+      text += '\n' + timestamp + '\n' + msg + '\n';
       if (obj) {
         text += JSON.stringify(obj, null, 4) + ' \n';
       }
-
+      if (level == 0){
+        text = error(text);
+      }
+      else if (level == 1){
+        text = success(text);
+    }
       // Print to console
       console.log(text);
 
