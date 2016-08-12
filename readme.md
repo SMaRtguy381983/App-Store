@@ -40,11 +40,16 @@ DB_SCHEMA=mysql <--- Your username in MySQL
 DB_PORT=8889 <--- Your port in MySQL
 ```
 
-## Start the server
+## Usage
 
-To run the server with default setting run
+To run the server with default settings
 ```
 npm start
+```
+
+To run the server with debug settings
+```
+DEBUG=true npm start
 ```
 
 
