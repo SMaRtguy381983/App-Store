@@ -1,5 +1,5 @@
 # App Store README
-#### v1.1.1
+#### v1.3.0
 
 
 ## Installation
