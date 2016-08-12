@@ -2,11 +2,9 @@ const app = require('../../models/app');
 // Define our log module
 const utilityTool = require('../../lib/utilityTool');
 
-const colors = require('colors/safe');
-colors.setTheme({
-  success: ['green', 'bold'],
-  error: ['red', 'bold']
-});
+const chalk = require('chalk');
+const success = chalk.bold.green;
+const error = chalk.bold.red;
 
 module.exports = (express) => {
   const router = express.Router();
@@ -19,10 +17,10 @@ module.exports = (express) => {
         nested: true,
       }]
     }, (err) => {
-      utilityTool.debug('Error occurred while attempting to load all apps' + error, err);
+      utilityTool.debug('Error occurred while attempting to load all apps', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully loaded all apps' + success, data);
+      utilityTool.debug('Successfully loaded all apps', data, 1);
       res.status(200).json(data);
     })
   });
@@ -31,23 +29,22 @@ module.exports = (express) => {
   router.get('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
     app.one(req.body, (err) => {
-      utilityTool.debug('Error occurred while attempting to load an app', err);
+      utilityTool.debug('Error occurred while attempting to load an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully loaded an app', data);
+      utilityTool.debug('Successfully loaded an app', data, 1);
       res.status(200).json(data);
     })
   });
-
 
   // This route will Delete an Application
   router.delete('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
     app.remove(req.body, (err) => {
-      utilityTool.debug('Error occurred while attempting to remove an app', err);
+      utilityTool.debug('Error occurred while attempting to remove an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully removed an app', data);
+      utilityTool.debug('Successfully removed an app', data, 1);
       res.status(200).json(data);
     })
   });
@@ -56,10 +53,10 @@ module.exports = (express) => {
   router.post('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
     app.update(req.body, (err) => {
-      utilityTool.debug('Error occurred while attempting to update an app', err);
+      utilityTool.debug('Error occurred while attempting to update an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully updated an app', data);
+      utilityTool.debug('Successfully updated an app', data, 1);
       res.status(200).json(data);
     })
   });
@@ -67,10 +64,10 @@ module.exports = (express) => {
   // This route will Create an Application
   router.post('/apps', (req, res) => {
     app.add(req.body, (err) => {
-      utilityTool.debug('Error occurred while attempting to create an app', err);
+      utilityTool.debug('Error occurred while attempting to create an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully created an app', data);
+      utilityTool.debug('Successfully created an app', data, 1);
       res.status(200).json(data);
     })
   });
@@ -86,10 +83,10 @@ module.exports = (express) => {
         nested: true,
       }]
     }, req.body, (err) => {
-      utilityTool.debug('Error occurred while attempting to load all apps for a user', err);
+      utilityTool.debug('Error occurred while attempting to load all apps for a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      utilityTool.debug('Successfully loaded all apps for a user', data);
+      utilityTool.debug('Successfully loaded all apps for a user', data, 1);
       res.status(200).json(data);
     })
   });
