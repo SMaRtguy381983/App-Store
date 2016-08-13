@@ -20,17 +20,22 @@ module.exports = (express) => {
       },
     };
 
-// This code will set up a route that will run a test that will display All Apps Info
-  router.get('/apps', (req, res) => {
-    return res.json([example]);
-  });
+/** This code will set up a route that will run a test that will display All
+* Apps Info
+*/
+  router.get('/apps', (req, res) =>
+    res.json([example])
+  );
 
-// This code will set up a route that will run a test that will display All User Info
-  router.get('/users', (req, res) => {
-    return res.json([example.user]);
-  });
+/** This code will set up a route that will run a test that will display All
+* User Info
+*/
+  router.get('/users', (req, res) =>
+    res.json([example.user])
+  );
 
-// This code will set up a route that will run a test that will display Single App Info
+/** This code will set up a route that will run a test that will display Single * App Info
+*/
   router.get('/apps/:id', (req, res) => {
     if (req.params.id && req.params.id === example.id) {
       return res.json(example);

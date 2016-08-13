@@ -27,7 +27,7 @@ npm i -g eslint-config-airbnb
 
 npm i -g eslint-plugin-import
 
-npm i -g eslint-plugin-jsx-a11y 
+npm i -g eslint-plugin-jsx-a11y
 
 npm i -g eslint-plugin-react
 
@@ -45,7 +45,7 @@ npm i --save mysql
 
 Install dotenv
 ```
-npm i --save-dev dotenv
+npm i --save dotenv
 ```
 
 Store these values in a .env file

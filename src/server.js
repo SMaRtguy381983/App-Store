@@ -1,8 +1,8 @@
-import { express } from 'express';
-
-export default express;
+// import { express } from 'express';
 
 // Here I set up my constant (non-changing) variables
+const express = require('express');
+
 const bodyParser = require('body-parser');
 
 const app = express();

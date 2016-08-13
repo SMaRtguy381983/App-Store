@@ -18,8 +18,9 @@ module.exports = (express) => {
 
   // This route will Read a User
   router.get('/users/:id', (req, res) => {
-    req.body.id = req.params.id;
-    user.one(req.body, (err) => {
+    const body = req.body;
+    body.id = req.params.id;
+    user.one(body, (err) => {
       utilityTool.debug('Error occurred while attempting to load a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
@@ -30,8 +31,9 @@ module.exports = (express) => {
 
   // This route will Delete a User
   router.delete('/users/:id', (req, res) => {
-    req.body.id = req.params.id;
-    user.remove(req.body, (err) => {
+    const body = req.body;
+    body.id = req.params.id;
+    user.remove(body, (err) => {
       utilityTool.debug('Error occurred while attempting to remove a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
@@ -42,8 +44,9 @@ module.exports = (express) => {
 
   // This route will Update a User
   router.post('/users/:id', (req, res) => {
-    req.body.id = req.params.id;
-    user.update(req.body, (err) => {
+    const body = req.body;
+    body.id = req.params.id;
+    user.update(body, (err) => {
       utilityTool.debug('Error occurred while attempting to update a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
@@ -54,7 +57,8 @@ module.exports = (express) => {
 
   // This route will Create a User
   router.post('/users', (req, res) => {
-    user.add(req.body, (err) => {
+    const body = req.body;
+    user.add(body, (err) => {
       utilityTool.debug('Error occurred while attempting to create a user', err, 0);
       res.status(500).json(err);
     }, (data) => {

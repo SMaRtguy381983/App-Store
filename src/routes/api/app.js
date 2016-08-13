@@ -23,8 +23,9 @@ module.exports = (express) => {
 
   // This route will Read a Application
   router.get('/apps/:id', (req, res) => {
-    req.body.id = req.params.id;
-    app.one(req.body, (err) => {
+    const body = req.body;
+    body.id = req.params.id;
+    app.one(body, (err) => {
       utilityTool.debug('Error occurred while attempting to load an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
@@ -35,7 +36,8 @@ module.exports = (express) => {
 
   // This route will Delete an Application
   router.delete('/apps/:id', (req, res) => {
-    req.body.id = req.params.id;
+    const body = req.body;
+    body.id = req.params.id;
     app.remove(req.body, (err) => {
       utilityTool.debug('Error occurred while attempting to remove an app', err, 0);
       res.status(500).json(err);
@@ -47,8 +49,9 @@ module.exports = (express) => {
 
   // This route will Update an Application
   router.post('/apps/:id', (req, res) => {
-    req.body.id = req.params.id;
-    app.update(req.body, (err) => {
+    const body = req.body;
+    body.id = req.params.id;
+    app.update(body, (err) => {
       utilityTool.debug('Error occurred while attempting to update an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
@@ -59,7 +62,8 @@ module.exports = (express) => {
 
   // This route will Create an Application
   router.post('/apps', (req, res) => {
-    app.add(req.body, (err) => {
+    const body = req.body;
+    app.add(body, (err) => {
       utilityTool.debug('Error occurred while attempting to create an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
