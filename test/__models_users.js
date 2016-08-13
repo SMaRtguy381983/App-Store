@@ -25,9 +25,8 @@ describe('User Model', () => {
 
   // Add a User
   it('Adds a new User', (done) => {
-
     // Generate a fake User with a random name
-    const fakeUser = { name: faker.name.firstName(), description:'' };
+    const fakeUser = { name: faker.name.firstName(), description: '' };
 
     // Call user model for adding
     User.add(fakeUser,
@@ -35,7 +34,6 @@ describe('User Model', () => {
         throw new Error(err);
       },
       (user) => {
-
         // Save the returned data for later use in tests
         this.tempUser = user.dataValues;
 
@@ -48,7 +46,6 @@ describe('User Model', () => {
 
   // Find a User
   it('Find a User', (done) => {
-
     // Generate a fake User with a random name
     const targetUser = this.testUsers[0];
 
@@ -58,7 +55,6 @@ describe('User Model', () => {
         throw new Error(err);
       },
       (user) => {
-
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(targetUser.name);
         done();
@@ -68,9 +64,8 @@ describe('User Model', () => {
 
   // Update a User
   it('Update a User', (done) => {
-
     // Load in the info for an existing user
-    var updateUser = this.tempUser;
+    const updateUser = this.tempUser;
 
     // Generate a new name for the user
     updateUser.name = 'Not A Real Name';
@@ -92,9 +87,8 @@ describe('User Model', () => {
 
   // Remove a User
   it('Remove a User', (done) => {
-
     // Load in the info for an existing user
-    var removeUser = this.tempUser;
+    const removeUser = this.tempUser;
     removeUser.force = true;
 
     // Call user model for updating
@@ -103,12 +97,10 @@ describe('User Model', () => {
         throw new Error(err);
       },
       (response) => {
-
         // if successfully removed a 1 should be returned
         expect(response).to.be.equal(1);
         done();
       }
     );
   });
-
 });

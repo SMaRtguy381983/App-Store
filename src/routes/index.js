@@ -4,7 +4,7 @@ module.exports = (express) => {
   router.post('/status', (req, res) => {
     res.json({
       healthy: true,
-    })
+    });
   });
 
   // Routes
@@ -12,4 +12,4 @@ module.exports = (express) => {
   router.use('/api/v1', require('./api/user')(express));
 
   return router;
-}
+};

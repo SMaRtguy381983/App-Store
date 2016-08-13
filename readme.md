@@ -1,5 +1,5 @@
 # App Store README
-#### v1.3.0
+#### v1.4.0
 
 
 ## Installation
@@ -16,6 +16,24 @@ npm i -g mocha
 npm i mocha --save-dev
 
 npm i chai --save-dev
+
+apm i linter-eslint
+
+npm i eslint --save-dev
+
+npm i -g eslint
+
+npm i -g eslint-config-airbnb
+
+npm i -g eslint-plugin-import
+
+npm i -g eslint-plugin-jsx-a11y 
+
+npm i -g eslint-plugin-react
+
+npm i --save-dev eslint-plugin-jsx-a11y
+
+npm i --save-dev eslint-plugin-import
 ```
 
 Install Sequelize & MySQL
@@ -32,12 +50,12 @@ npm i --save-dev dotenv
 
 Store these values in a .env file
 ```
-DB_NAME=appStore <--- Your database name in MySQL
-DB_USER=root <--- Your username in MySQL
-DB_PASS=root <--- Your password in MySQL
-DB_HOST=localhost <--- Your host name in MySQL
-DB_SCHEMA=mysql <--- Your username in MySQL
-DB_PORT=8889 <--- Your port in MySQL
+DB_NAME= <--- Your database name in MySQL
+DB_USER= <--- Your username in MySQL
+DB_PASS= <--- Your password in MySQL
+DB_HOST= <--- Your host name in MySQL
+DB_SCHEMA= <--- Your username in MySQL
+DB_PORT= <--- Your port in MySQL
 ```
 
 ## Usage
