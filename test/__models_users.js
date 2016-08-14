@@ -3,8 +3,8 @@ const faker = require('faker');
 const User = require('../src/models/user');
 
 describe('User Model', () => {
-  let testUsers;
-  let tempUser;
+  let testUsersIgnored;
+  let tempUserIgnored;
 
 
   // Test for all Users
@@ -14,8 +14,8 @@ describe('User Model', () => {
         throw new Error(err);
       },
       (users) => {
-        this.testUsers = users;
-        expect(this.testUsers.length).to.be.above(0);
+        this.testUsersIgnored = users;
+        expect(this.testUsersIgnored.length).to.be.above(0);
         done();
       }
     );
@@ -33,7 +33,7 @@ describe('User Model', () => {
       },
       (user) => {
         // Save the returned data for later use in tests
-        this.tempUser = user.dataValues;
+        this.tempUserIgnored = user.dataValues;
 
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(fakeUser.name);
@@ -45,7 +45,7 @@ describe('User Model', () => {
   // Find a User
   it('Find a User', (done) => {
     // Generate a fake User with a random name
-    const targetUser = this.testUsers[0];
+    const targetUser = this.testUsersIgnored[0];
 
     // Call user model for finding
     User.one(targetUser,
@@ -63,7 +63,7 @@ describe('User Model', () => {
   // Update a User
   it('Update a User', (done) => {
     // Load in the info for an existing user
-    const updateUser = this.tempUser;
+    const updateUser = this.tempUserIgnored;
 
     // Generate a new name for the user
     updateUser.name = 'Not A Real Name';
@@ -75,7 +75,7 @@ describe('User Model', () => {
       },
       (user) => {
         // Save the returned data for later use in tests
-        this.tempUser = user;
+        this.tempUserIgnored = user;
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(updateUser.name);
         done();
@@ -86,7 +86,7 @@ describe('User Model', () => {
   // Remove a User
   it('Remove a User', (done) => {
     // Load in the info for an existing user
-    const removeUser = this.tempUser;
+    const removeUser = this.tempUserIgnored;
     removeUser.force = true;
 
     // Call user model for updating

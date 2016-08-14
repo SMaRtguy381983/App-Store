@@ -3,7 +3,7 @@ const request = require('supertest');
 
 describe('App Routes', () => {
   let server;
-  let app;
+  let appIgnored;
 
   beforeEach(() => {
     server = require('../src/server');
@@ -23,7 +23,7 @@ describe('App Routes', () => {
         const apps = res.body;
 
         // Save one single app from the list to test on in later tests
-        this.app = apps[0];
+        this.appIgnored = apps[0];
 
         expect(apps.length).to.be.above(0);
       })
@@ -31,18 +31,18 @@ describe('App Routes', () => {
   });
 
   // Test for a single app
-  it('GET /api/v1/apps/:id returns an app obj with id, title, description, and releaseDate properties', (done) => {
+  const route = 'GET /api/v1/apps/:id';
+  it(`${route} returns an app obj with id, title, desc, and releaseDate properties`, (done) => {
     request(server)
-      .get('/api/v1/apps/' + this.app.id)
+      .get('/api/v1/apps/' + this.appIgnored.id)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect((res) => {
-        const app = res.body;
-        expect(app).to.have.property('id')
-        expect(app).to.have.property('title')
-        expect(app).to.have.property('description')
+        const tmpApp = res.body;
+        expect(tmpApp).to.have.property('id');
+        expect(tmpApp).to.have.property('title');
+        expect(tmpApp).to.have.property('description');
       })
-      .end(done)
+      .end(done);
   });
-
 });
