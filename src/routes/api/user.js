@@ -63,7 +63,7 @@ module.exports = (express) => {
       res.status(500).json(err);
     }, (data) => {
       utilityTool.debug('Successfully created a user', data, 1);
-      res.status(200).json(data);
+      res.status(201).json(data);
     });
   });
 
