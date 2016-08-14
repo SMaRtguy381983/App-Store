@@ -17,6 +17,8 @@
 	},
 	"globals": {
 		"describe": true,
-		"it": true
+		"it": true,
+		"afterEach": true,
+		"beforeEach": true
 	}
 }
