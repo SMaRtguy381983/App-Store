@@ -2,53 +2,13 @@
 #### v1.4.0
 
 
-## Installation
+## Prodcution Usage
 
 Install all dependencies
 ```
-npm install
+npm i
 ```
-
-Install all command line tools
-```
-npm i -g mocha
-
-npm i mocha --save-dev
-
-npm i chai --save-dev
-
-apm i linter-eslint
-
-npm i eslint --save-dev
-
-npm i -g eslint
-
-npm i -g eslint-config-airbnb
-
-npm i -g eslint-plugin-import
-
-npm i -g eslint-plugin-jsx-a11y
-
-npm i -g eslint-plugin-react
-
-npm i --save-dev eslint-plugin-jsx-a11y
-
-npm i --save-dev eslint-plugin-import
-```
-
-Install Sequelize & MySQL
-```
-npm i --save sequelize
-
-npm i --save mysql
-```
-
-Install dotenv
-```
-npm i --save dotenv
-```
-
-Store these values in a .env file
+Create a .env file in the project root directory and store these values in a .env file
 ```
 DB_NAME= <--- Your database name in MySQL
 DB_USER= <--- Your username in MySQL
@@ -58,7 +18,19 @@ DB_SCHEMA= <--- Your username in MySQL
 DB_PORT= <--- Your port in MySQL
 ```
 
-## Usage
+## Development Usage
+#### <i>-- do the following after the above production usage</i>
+
+Install additional dependencies
+```
+npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+```
+Install linter package for Atom IDE
+```
+apm i linter-eslint
+```
+
+## Debug Usage
 
 To run the server with default settings
 ```
@@ -70,8 +42,12 @@ To run the server with debug settings
 DEBUG=true npm start
 ```
 
+To run the server with nodemon
+```
+DEBUG=true nodemon src/server.js
+```
 
-## Run the Unit tests
+## Run Unit tests
 
 To run the unit tests
 ```
