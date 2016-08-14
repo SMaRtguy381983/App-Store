@@ -3,8 +3,8 @@ const faker = require('faker');
 const App = require('../src/models/app');
 
 describe('App Model', () => {
-  let testApps;
-  let tempApp;
+  let testAppsIgnored;
+  let tempAppIgnored;
 
   // Test for all Apps
   it('Gets All', (done) => {
@@ -18,8 +18,8 @@ describe('App Model', () => {
         throw new Error(err);
       },
       (apps) => {
-        this.testApps = apps;
-        expect(this.testApps.length).to.be.above(0);
+        this.testAppsIgnored = apps;
+        expect(this.testAppsIgnored.length).to.be.above(0);
         done();
       }
     );
@@ -37,7 +37,7 @@ describe('App Model', () => {
       },
       (app) => {
         // Save the returned data for later use in tests
-        this.tempApp = app.dataValues;
+        this.tempAppIgnored = app.dataValues;
 
         // App.title returned from model should match app.title supplied
         expect(app.title).to.be.equal(fakeApp.title);
@@ -49,7 +49,7 @@ describe('App Model', () => {
   // Find a App
   it('Find a App', (done) => {
     // Generate a fake App with a random title
-    const targetApp = this.testApps[0];
+    const targetApp = this.testAppsIgnored[0];
 
     // Call app model for finding
     App.one(targetApp,
@@ -67,7 +67,7 @@ describe('App Model', () => {
   // Update a App
   it('Update a App', (done) => {
     // Load in the info for an existing app
-    const updateApp = this.tempApp;
+    const updateApp = this.tempAppIgnored;
 
     // Generate a new title for the app
     updateApp.title = 'Not A Real Name';
@@ -79,7 +79,7 @@ describe('App Model', () => {
       },
       (app) => {
         // Save the returned data for later use in tests
-        this.tempApp = app;
+        this.tempAppIgnored = app;
         // App.title returned from model should match app.title supplied
         expect(app.title).to.be.equal(updateApp.title);
         done();
@@ -90,7 +90,7 @@ describe('App Model', () => {
   // Remove a App
   it('Remove a App', (done) => {
     // Load in the info for an existing app
-    const removeApp = this.tempApp;
+    const removeApp = this.tempAppIgnored;
     removeApp.force = true;
 
     // Call app model for updating
