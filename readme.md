@@ -2,7 +2,7 @@
 #### v1.4.0
 
 
-## Prodcution Usage
+## Production Usage
 
 Install all dependencies
 ```
