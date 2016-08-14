@@ -6,21 +6,6 @@ describe('User Model', () => {
   let testUsersIgnored;
   let tempUserIgnored;
 
-
-  // Test for all Users
-  it('Gets All', (done) => {
-    User.all(
-      (err) => {
-        throw new Error(err);
-      },
-      (users) => {
-        this.testUsersIgnored = users;
-        expect(this.testUsersIgnored.length).to.be.above(0);
-        done();
-      }
-    );
-  });
-
   // Add a User
   it('Adds a new User', (done) => {
     // Generate a fake User with a random name
@@ -37,6 +22,21 @@ describe('User Model', () => {
 
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(fakeUser.name);
+        done();
+      }
+    );
+  });
+
+
+  // Test for all Users
+  it('Gets All', (done) => {
+    User.all(
+      (err) => {
+        throw new Error(err);
+      },
+      (users) => {
+        this.testUsersIgnored = users;
+        expect(users.length).to.be.above(0);
         done();
       }
     );
