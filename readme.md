@@ -4,17 +4,15 @@
   <li style='font-size:.8em'>Added Unit Test Usage Information to README</li>
 </ul>  
 
-<section style='background:purple'>
-  <h2>Usage</h2>
-    <article style='background:skyblue'>
-      <h3 style ='color:black'>Production Usage</h3>
-    </article>  
-</section>    
-    <p>Install all dependencies</p>
+***
+
+  <h2 style='background:purple'>Usage</h2>
+  <h3 style ='background:skyblue;color:black'>Production Usage</h3>
+  Install all dependencies
 ```
 npm i
 ```
-  <p>Create a .env file in the project root directory and store these values in a .env file</p>
+  Create a .env file in the project root directory and store these values in a .env file
 ```
 DB_NAME= <--- Your database name in MySQL
 DB_USER= <--- Your username in MySQL
@@ -24,62 +22,50 @@ DB_SCHEMA= <--- Your username in MySQL
 DB_PORT= <--- Your port in MySQL
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Development Usage</h3>
-</article>  
-<h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
-<p>Install additional dependencies</p>
+  <h3 style ='background:skyblue;color:black'>Development Usage</h3>
+  <h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
+  Install additional dependencies
 ```
 npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
-<p>Install linter package for Atom IDE</p>
+  Install linter package for Atom IDE
 ```
 apm i linter-eslint
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Debug Usage</h3>
-</article>
-<p>To run the server with default settings</p>
+  <h3 style ='background:skyblue;color:black'>Debug Usage</h3>
+  To run the server with default settings
 ```
 npm start
 ```
-<p>To run the server with debug settings</p>
+  To run the server with debug settings
 ```
 DEBUG=true npm start
 ```
-<p>To run the server with nodemon</p>
+  To run the server with nodemon
 ```
 DEBUG=true nodemon src/server.js
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Unit Testing</h3>
-</article>
-<p>To run the unit tests</p>
+  <h3 style ='background:skyblue;color:black'>Unit Testing</h3>
+  To run the unit tests
 ```
 npm test
 ```
 
+***
 
-<section style='background:purple'>
-  <h2>Endpoints/Routes</h2>
-    <article style='background:skyblue'>
-      <h4 style ='color:black'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
-    </article>  
-</section>    
+  <h2 style='background:purple'>Endpoints/Routes</h2>
+  <h4 style='background:purple;color'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
+  <h3 style ='background:skyblue;color:black'>CRUD for Users</h3>
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>CRUD for Users</h3>
-</article>
-
-<h4>What this route does:</h4>
-<p>This route will POST (Create) a user and return the results as an object.</p>
+  <h4>What this route does:</h4>
+  This route will POST (Create) a user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users | http://localhost:3000/api/v1/users |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -89,13 +75,13 @@ npm test
 }
 ```
 
-#### What this route does:
-This route will GET all the users and return the results as an array of objects.
+  <h4>What this route does:</h4>
+  This route will GET all the users and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users | http://localhost:3000/api/v1/users |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -113,13 +99,13 @@ This route will GET all the users and return the results as an array of objects.
 ]
 ```
 
-#### What this route does:
-This route will GET a specific user and return the results as an object.
+  <h4>What this route does:</h4>
+  This route will GET a specific user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/id: | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "ae25e5a4-73db-4969-9f6c-acf8246b7faa",
@@ -129,13 +115,13 @@ This route will GET a specific user and return the results as an object.
 }
 ```
 
-#### What this route does:
-This route will POST (Update) a specific user and return the results as an object.
+  <h4>What this route does:</h4>
+  This route will POST (Update) a specific user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users/:id | http://localhost:3000/api/v1/users/:id |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -145,27 +131,25 @@ This route will POST (Update) a specific user and return the results as an objec
 }
 ```
 
-#### What this route does:
-This route will DELETE a specific user and return the result of 1, confirming deletion.
+  <h4>What this route does:</h4>
+  This route will DELETE a specific user and return the result of 1, confirming deletion.
 
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/users/:id | http://localhost:3000/api/v1/users |  
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 1
 ```
 
-
-### CRUD for Apps
-
-#### What this route does:
-This route will POST (Create) an app and return the results as an object.
+  <h3 style ='background:skyblue;color:black'>CRUD for Apps</h3>
+  <h4>What this route does:</h4>
+  This route will POST (Create) an app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps | http://localhost:3000/api/v1/apps |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -177,13 +161,13 @@ This route will POST (Create) an app and return the results as an object.
 }
 ```
 
-#### What this route does:
-This route will GET a specific app and return the results as an object.
+  <h4>What this route does:</h4>
+  This route will GET a specific app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps/id: | http://localhost:3000/api/v1/apps/0032c47b-4a7b-4232-9cc3-6af718244ea8 |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "0032c47b-4a7b-4232-9cc3-6af718244ea8",
@@ -220,13 +204,13 @@ This route will GET a specific app and return the results as an object.
 }
 ```
 
-#### What this route does:
-This route will GET all the apps for a specific user and return the results as an array of objects.
+  <h4>What this route does:</h4>
+  This route will GET all the apps for a specific user and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/:id/apps | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa/apps |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -265,13 +249,13 @@ This route will GET all the apps for a specific user and return the results as a
 ]
 ```
 
-#### What this route does:
-This route will GET all the apps and return the results as an array of objects.
+  <h4>What this route does:</h4>
+  This route will GET all the apps and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps | http://localhost:3000/api/v1/apps |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -337,13 +321,13 @@ This route will GET all the apps and return the results as an array of objects.
 ]
 ```
 
-#### What this route does:
-This route will POST (Update) a specific app and return the results as an object.
+  <h4>What this route does:</h4>
+  This route will POST (Update) a specific app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/:id |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -356,19 +340,22 @@ This route will POST (Update) a specific app and return the results as an object
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will DELETE a specific app and return the result of 1, confirming deletion.
 
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/d281c58e-4447-48b6-82cd-dc2eb90b5fd6 |  
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+  <h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 1
 ```
 
+***
 
-## Versioning
+<h2 style='background:purple'>Versioning</h2>
 Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
-###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
+***
+
+<h6>Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a></h6>
