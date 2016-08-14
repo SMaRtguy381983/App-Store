@@ -1,14 +1,20 @@
-# App Store README
-#### v1.4.0
+<h1 style='color:red; font-weight:bolder'>App Store README</h1>
+<ul style='font-size:1.3em'>What's new in v1.5.0?
+  <li style='font-size:.8em'>Added Dynamic Unit Testing</li>
+  <li style='font-size:.8em'>Added Unit Test Usage Information to README</li>
+</ul>  
 
-
-## Production Usage
-
-Install all dependencies
+<section style='background:purple'>
+  <h2>Usage</h2>
+    <article style='background:skyblue'>
+      <h3 style ='color:black'>Production Usage</h3>
+    </article>  
+</section>    
+    <p>Install all dependencies</p>
 ```
 npm i
 ```
-Create a .env file in the project root directory and store these values in a .env file
+  <p>Create a .env file in the project root directory and store these values in a .env file</p>
 ```
 DB_NAME= <--- Your database name in MySQL
 DB_USER= <--- Your username in MySQL
@@ -18,51 +24,57 @@ DB_SCHEMA= <--- Your username in MySQL
 DB_PORT= <--- Your port in MySQL
 ```
 
-## Development Usage
-#### <i>-- do the following after the above production usage</i>
-
-Install additional dependencies
+<article style='background:skyblue'>
+  <h3 style ='color:black'>Development Usage</h3>
+</article>  
+<h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
+<p>Install additional dependencies</p>
 ```
 npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
-Install linter package for Atom IDE
+<p>Install linter package for Atom IDE</p>
 ```
 apm i linter-eslint
 ```
 
-## Debug Usage
-
-To run the server with default settings
+<article style='background:skyblue'>
+  <h3 style ='color:black'>Debug Usage</h3>
+</article>
+<p>To run the server with default settings</p>
 ```
 npm start
 ```
-
-To run the server with debug settings
+<p>To run the server with debug settings</p>
 ```
 DEBUG=true npm start
 ```
-
-To run the server with nodemon
+<p>To run the server with nodemon</p>
 ```
 DEBUG=true nodemon src/server.js
 ```
 
-## Run Unit tests
-
-To run the unit tests
+<article style='background:skyblue'>
+  <h3 style ='color:black'>Unit Testing</h3>
+</article>
+<p>To run the unit tests</p>
 ```
 npm test
 ```
 
 
-## Endpoints/Routes
+<section style='background:purple'>
+  <h2>Endpoints/Routes</h2>
+    <article style='background:skyblue'>
+      <h4 style ='color:black'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
+    </article>  
+</section>    
 
-### These routes were tested using the Postman application, download it here: https://www.getpostman.com/
+<article style='background:skyblue'>
+  <h3 style ='color:black'>CRUD for Users</h3>
+</article>
 
-### CRUD for Users
-
-#### What this route does:
-This route will POST (Create) a user and return the results as an object.
+<h4>What this route does:</h4>
+<p>This route will POST (Create) a user and return the results as an object.</p>
 
 | Method | URL | Link |
 |---|---|---|
