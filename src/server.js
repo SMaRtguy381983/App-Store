@@ -5,6 +5,8 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
+const utilityTool = require('./lib/utilityTool');
+
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -21,7 +23,7 @@ app.use('/', require('./routes')(express));
 
 // This code starts the server and prints a console.log to the terminal
 const server = app.listen(port, () => {
-  process.stdout.write('Server Active on', port);
+  utilityTool.debug(`Server Active on ${port}`);
 });
 
 // This line assigns the exported module the value of the constant variable server

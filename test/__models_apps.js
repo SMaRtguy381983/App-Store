@@ -1,13 +1,10 @@
 const expect = require('chai').expect;
-const request = require('supertest');
 const faker = require('faker');
 const App = require('../src/models/app');
 
 describe('App Model', () => {
-  let server;
   let testApps;
   let tempApp;
-
 
   // Test for all Apps
   it('Gets All', (done) => {
