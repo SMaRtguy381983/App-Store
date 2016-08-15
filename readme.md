@@ -1,10 +1,10 @@
-<h1 style='color:red; font-weight:bolder'>App Store README</h1>
-<ul style='font-size:1.3em'>What's new in v1.5.0?
-  <li style='font-size:.8em'>Added Dynamic Unit Testing</li>
-  <li style='font-size:.8em'>Added Unit Test Usage Information to README</li>
+<h1 style='background:black;color:red; font-weight:bolder'>App Store README</h1>
+<ul style='font-size:1.3em;font-style:bolder'>What's new in v1.5.0?
+  <li style='font-size:.8em;font-style:italic'>Added Dynamic Unit Testing</li>
+  <li style='font-size:.8em;font-style:italic'>Added Unit Test Usage Information to README</li>
 </ul>  
 
-***
+<hr>
 
   <h2 style='background:purple'>Usage</h2>
   <h3 style ='background:skyblue;color:black'>Production Usage</h3>
@@ -22,8 +22,10 @@ DB_SCHEMA= <--- Your username in MySQL
 DB_PORT= <--- Your port in MySQL
 ```
 
-  <h3 style ='background:skyblue;color:black'>Development Usage</h3>
-  <h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
+<hr>
+
+  <h3 style ='background:skyblue;color:black'>Development Usage (after following above directctions for Production Usage)</h3>
+
   Install additional dependencies
 ```
 npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
@@ -33,7 +35,10 @@ npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-p
 apm i linter-eslint
 ```
 
+<hr>
+
   <h3 style ='background:skyblue;color:black'>Debug Usage</h3>
+
   To run the server with default settings
 ```
 npm start
@@ -47,16 +52,22 @@ DEBUG=true npm start
 DEBUG=true nodemon src/server.js
 ```
 
+<hr>
+
   <h3 style ='background:skyblue;color:black'>Unit Testing</h3>
+
   To run the unit tests
 ```
 npm test
 ```
 
-***
+<hr>
 
   <h2 style='background:purple'>Endpoints/Routes</h2>
   <h4 style='background:purple;color'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
+
+<hr>
+
   <h3 style ='background:skyblue;color:black'>CRUD for Users</h3>
 
   <h4>What this route does:</h4>
@@ -74,6 +85,8 @@ npm test
   "createdAt": "2016-08-08T03:44:22.000Z"
 }
 ```
+
+<hr>
 
   <h4>What this route does:</h4>
   This route will GET all the users and return the results as an array of objects.
@@ -99,6 +112,8 @@ npm test
 ]
 ```
 
+<hr>
+
   <h4>What this route does:</h4>
   This route will GET a specific user and return the results as an object.
 
@@ -114,6 +129,8 @@ npm test
   "updatedAt": null
 }
 ```
+
+<hr>
 
   <h4>What this route does:</h4>
   This route will POST (Update) a specific user and return the results as an object.
@@ -131,6 +148,8 @@ npm test
 }
 ```
 
+<hr>
+
   <h4>What this route does:</h4>
   This route will DELETE a specific user and return the result of 1, confirming deletion.
 
@@ -141,6 +160,8 @@ npm test
 ```
 1
 ```
+
+<hr>
 
   <h3 style ='background:skyblue;color:black'>CRUD for Apps</h3>
   <h4>What this route does:</h4>
@@ -160,6 +181,8 @@ npm test
   "createdAt": "2016-08-08T03:47:09.000Z"
 }
 ```
+
+<hr>
 
   <h4>What this route does:</h4>
   This route will GET a specific app and return the results as an object.
@@ -203,6 +226,8 @@ npm test
   }
 }
 ```
+
+<hr>
 
   <h4>What this route does:</h4>
   This route will GET all the apps for a specific user and return the results as an array of objects.
@@ -248,6 +273,8 @@ npm test
   }
 ]
 ```
+
+<hr>
 
   <h4>What this route does:</h4>
   This route will GET all the apps and return the results as an array of objects.
@@ -321,6 +348,8 @@ npm test
 ]
 ```
 
+<hr>
+
   <h4>What this route does:</h4>
   This route will POST (Update) a specific app and return the results as an object.
 
@@ -340,6 +369,8 @@ npm test
 }
 ```
 
+<hr>
+
 <h4>What this route does:</h4>
 This route will DELETE a specific app and return the result of 1, confirming deletion.
 
@@ -351,11 +382,16 @@ This route will DELETE a specific app and return the result of 1, confirming del
 1
 ```
 
-***
+<hr>
 
 <h2 style='background:purple'>Versioning</h2>
 Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
-***
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
 
 <h6>Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a></h6>
