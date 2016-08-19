@@ -5,7 +5,7 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-const utilityTool = require('./lib/utilityTool');
+const utilityTool = require('loot-ytilitu');
 
 const app = express();
 

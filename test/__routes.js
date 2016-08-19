@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const App = require('../src/models/app');
-const uTool = require('../src/utilityTool');
+const uTool = require('loot-ytilitu');
 
 describe('User Routes', () => {
   let server;

@@ -1,7 +1,6 @@
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
-<ul style='font-size:1.3em'>What's new in v1.5.0?
-  <li style='font-size:.8em'>Added Dynamic Unit Testing</li>
-  <li style='font-size:.8em'>Added Unit Test Usage Information to README</li>
+<ul style='font-size:1.3em'>What's new in v1.6.0?
+  <li style='font-size:.8em'>Removed the lib folder and its content (utilityTool) and now require the use of the utilityTool through NPM as the uniquely named package: loot.ytilitu
 </ul>  
 
 <section style='background:purple'>
@@ -10,11 +9,14 @@
       <h3 style ='color:black'>Production Usage</h3>
     </article>  
 </section>    
-    <p>Install all dependencies</p>
+
+  <p>Install all dependencies</p>
+
 ```
 npm i
 ```
   <p>Create a .env file in the project root directory and store these values in a .env file</p>
+
 ```
 DB_NAME= <--- Your database name in MySQL
 DB_USER= <--- Your username in MySQL
@@ -27,12 +29,17 @@ DB_PORT= <--- Your port in MySQL
 <article style='background:skyblue'>
   <h3 style ='color:black'>Development Usage</h3>
 </article>  
+
 <h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
+
 <p>Install additional dependencies</p>
+
 ```
 npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
+
 <p>Install linter package for Atom IDE</p>
+
 ```
 apm i linter-eslint
 ```
@@ -40,15 +47,19 @@ apm i linter-eslint
 <article style='background:skyblue'>
   <h3 style ='color:black'>Debug Usage</h3>
 </article>
+
 <p>To run the server with default settings</p>
+
 ```
 npm start
 ```
 <p>To run the server with debug settings</p>
+
 ```
 DEBUG=true npm start
 ```
 <p>To run the server with nodemon</p>
+
 ```
 DEBUG=true nodemon src/server.js
 ```
@@ -56,7 +67,9 @@ DEBUG=true nodemon src/server.js
 <article style='background:skyblue'>
   <h3 style ='color:black'>Unit Testing</h3>
 </article>
+
 <p>To run the unit tests</p>
+
 ```
 npm test
 ```
@@ -368,7 +381,7 @@ This route will DELETE a specific app and return the result of 1, confirming del
 ```
 
 
-## Versioning
+## Semantic Versioning
 Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
 ###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
