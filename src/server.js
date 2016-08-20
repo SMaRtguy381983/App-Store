@@ -5,7 +5,7 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-const utilityTool = require('loot-ytilitu');
+// const utilityTool = require('loot-ytilitu');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use('/', require('./routes')(express));
 
 // This code starts the server and prints a console.log to the terminal
 const server = app.listen(port, () => {
-  utilityTool.debug(`Server Active on ${port}`);
+  console.log(`Server Active on ${port}`);
 });
 
 // This line assigns the exported module the value of the constant variable server
