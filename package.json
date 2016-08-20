@@ -1,8 +1,12 @@
 {
   "name": "appstore",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "App Store for Deployment of Web Applications",
   "main": "src/server.js",
+  "engines": {
+      "node" : "v6.4.0",
+      "npm" : "3.10.6"
+  },
   "scripts": {
     "start": "node src/server.js",
     "test": "mocha --reporter spec test"
