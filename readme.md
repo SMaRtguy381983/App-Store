@@ -2,11 +2,10 @@
 <body style='background:pink'>
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
 <p>This README is best viewed with Marked 2 -- try it free</p>
-<a href='http://marked2app.com'>Download Marked 2 HERE</a>
+<p>Download Marked 2<a href='http://marked2app.com'> HERE</a></p>
 
-<ul style='font-size:1.3em'>What's new in v1.7.0?
-  <li style='font-size:.8em'>Removed the dotenv dependency and replaced it with localenvironment package</li>
-  <li style='font-size:.8em'>Removed the nodemon dependency and replaced it with PM2 package</li>
+<ul style='font-size:1.3em'>What's new in v1.8.0?
+  <li style='font-size:.8em'>Added instructions on how to prepare databases via Postman for Unit Testing</li>
 </ul>  
 
 <section style='background:purple'>
@@ -76,7 +75,36 @@ DEBUG=true pm2 start src/server.js --watch ./
 
 <article style='background:skyblue'>
   <h3 style ='color:black'>Unit Testing</h3>
+  <h4 style ='color:black'>These routes were populated using the Postman application, download it <a href='https://www.getpostman.com/'>HERE</a></h4>
 </article>
+
+<p>To have users test data readily available use use POST via Postman and this route:</p>
+
+```
+104.236.35.11/api/v1/users
+```
+<p>Enter these key:value pairs:</p>
+
+```
+{
+  "name": " "
+}
+```
+
+
+<p>To have apps test data readily available use POST via Postman and this route:</p>
+
+```
+104.236.35.11/api/v1/apps
+```
+<p>Enter these key:value pairs:</p>
+
+```
+{
+  "title": " ",
+  "description": " "
+}
+```
 
 <p>To run the unit tests</p>
 
@@ -115,7 +143,7 @@ npm test
 <section style='background:purple'>
   <h2 style='color:white'>Endpoints/Routes</h2>
     <article style='background:skyblue'>
-      <h4 style ='color:black'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
+      <h4 style ='color:black'>These routes were populated using the Postman application, download it  <a href='https://www.getpostman.com/'>HERE</a></h4>
     </article>  
 </section>    
 
@@ -422,6 +450,8 @@ This route will DELETE a specific app and return the result of 1, confirming del
 <section style='background:purple'>
   <h2 style='color:white'>Semantic Versioning</h2>
 </section>  
-<p>Visit SemVer to get the latest info on Semantic Versioning:</p> <a href='http://semver.org/spec/v2.0.0.html'>Learn about Semantic Versioning HERE</a>
+<p>Visit SemVer to get the latest info on Semantic Versioning:</p>
+<p>Learn about Semantic Versioning
+<a href='http://semver.org/spec/v2.0.0.html'> HERE</a></p>
 
 <h6>Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a></h6>
