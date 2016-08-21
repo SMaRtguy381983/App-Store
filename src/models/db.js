@@ -2,7 +2,7 @@
 const Sequelize = require('sequelize');
 
 // Here I am requiring the dotenv dependency
-require('dotenv').config();
+require('localenvironment').config();
 
 /** Here I establish a constant variable that when instatiated will populate
 * the database using preset parameters
