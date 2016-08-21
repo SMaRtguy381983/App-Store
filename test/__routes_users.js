@@ -53,7 +53,7 @@ describe('User Routes', () => {
       description: 'none',
       userId: this.userIgnored.id };
 
-      // console.log(newApp.userId);
+      // utilityTool.debug(newApp.userId);
     App.add(newApp, null, () => {
       request(server)
         .get('/api/v1/users/' + this.userIgnored.id + '/apps')
@@ -61,7 +61,7 @@ describe('User Routes', () => {
         .expect('Content-Type', /json/)
         .expect((res) => {
           const apps = res.body;
-            // console.log(apps);
+            // utilityTool.debug(apps);
           // Save one single app from the list to test on in later tests
           expect(apps.length).to.be.above(0);
         });

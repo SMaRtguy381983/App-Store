@@ -4,26 +4,6 @@ const App = require('../src/models/app');
 
 describe('App Model', () => {
   let testAppsIgnored;
-  let tempAppIgnored;
-
-  // Test for all Apps
-  it('Gets All', (done) => {
-    App.all({
-      include: [{
-        all: true,
-        nested: true,
-      }],
-    },
-      (err) => {
-        throw new Error(err);
-      },
-      (apps) => {
-        this.testAppsIgnored = apps;
-        expect(this.testAppsIgnored.length).to.be.above(0);
-        done();
-      }
-    );
-  });
 
   // Add a App
   it('Adds a new App', (done) => {
@@ -41,6 +21,25 @@ describe('App Model', () => {
 
         // App.title returned from model should match app.title supplied
         expect(app.title).to.be.equal(fakeApp.title);
+        done();
+      }
+    );
+  });
+
+  // Test for all Apps
+  it('Gets All', (done) => {
+    App.all({
+      include: [{
+        all: true,
+        nested: true,
+      }],
+    },
+      (err) => {
+        throw new Error(err);
+      },
+      (apps) => {
+        this.testAppsIgnored = apps;
+        expect(this.testAppsIgnored.length).to.be.above(0);
         done();
       }
     );
@@ -70,7 +69,7 @@ describe('App Model', () => {
     const updateApp = this.tempAppIgnored;
 
     // Generate a new title for the app
-    updateApp.title = 'Not A Real Name';
+    updateApp.title = faker.name.firstName();
 
     // Call app model for updating
     App.update(updateApp,

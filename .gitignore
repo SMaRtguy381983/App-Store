@@ -3,8 +3,7 @@ node_modules
 .DS_Store
 *.log
 *.logs
-.env
-.env.json
+env.json
 out
 build
 logs

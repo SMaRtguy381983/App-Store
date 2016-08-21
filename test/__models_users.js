@@ -4,22 +4,6 @@ const User = require('../src/models/user');
 
 describe('User Model', () => {
   let testUsersIgnored;
-  let tempUserIgnored;
-
-
-  // Test for all Users
-  it('Gets All', (done) => {
-    User.all(
-      (err) => {
-        throw new Error(err);
-      },
-      (users) => {
-        this.testUsersIgnored = users;
-        expect(this.testUsersIgnored.length).to.be.above(0);
-        done();
-      }
-    );
-  });
 
   // Add a User
   it('Adds a new User', (done) => {
@@ -37,6 +21,20 @@ describe('User Model', () => {
 
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(fakeUser.name);
+        done();
+      }
+    );
+  });
+
+  // Test for all Users
+  it('Gets All', (done) => {
+    User.all(
+      (err) => {
+        throw new Error(err);
+      },
+      (users) => {
+        this.testUsersIgnored = users;
+        expect(this.testUsersIgnored.length).to.be.above(0);
         done();
       }
     );
@@ -66,7 +64,7 @@ describe('User Model', () => {
     const updateUser = this.tempUserIgnored;
 
     // Generate a new name for the user
-    updateUser.name = 'Not A Real Name';
+    updateUser.name = faker.name.firstName();
 
     // Call user model for updating
     User.update(updateUser,
