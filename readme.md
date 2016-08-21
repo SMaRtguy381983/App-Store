@@ -1,6 +1,7 @@
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
-<ul style='font-size:1.3em'>What's new in v1.6.0?
-  <li style='font-size:.8em'>Removed the lib folder and its content (utilityTool) and now require the use of the utilityTool through NPM as the uniquely named package: loot.ytilitu
+<ul style='font-size:1.3em'>What's new in v1.7.0?
+  <li style='font-size:.8em'>Removed the dotenv dependency and replaced it with localenvironment package</li>
+  <li style='font-size:.8em'>Removed the nodemon dependency and replaced it with PM2 package</li>
 </ul>  
 
 <section style='background:purple'>
@@ -15,15 +16,24 @@
 ```
 npm i
 ```
-  <p>Create a .env file in the project root directory and store these values in a .env file</p>
+
+<p>Install latest stable version of PM2</p>
 
 ```
-DB_NAME= <--- Your database name in MySQL
-DB_USER= <--- Your username in MySQL
-DB_PASS= <--- Your password in MySQL
-DB_HOST= <--- Your host name in MySQL
-DB_SCHEMA= <--- Your username in MySQL
-DB_PORT= <--- Your port in MySQL
+npm install pm2@latest -g
+```
+
+  <p>Create a env.json file in the project root directory and use the below JSON object template, replacing values as necessary</p>
+
+```
+{
+  "DB_NAME": "Your database name in MySQL",
+  "DB_USER": "Your username in MySQL",
+  "DB_PASS": "Your password in MySQL",
+  "DB_HOST": "localhost",
+  "DB_SCHEMA": "mysql",
+  "DB_PORT": "3306"
+}
 ```
 
 <article style='background:skyblue'>
@@ -35,7 +45,7 @@ DB_PORT= <--- Your port in MySQL
 <p>Install additional dependencies</p>
 
 ```
-npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
 
 <p>Install linter package for Atom IDE</p>
@@ -58,10 +68,10 @@ npm start
 ```
 DEBUG=true npm start
 ```
-<p>To run the server with nodemon</p>
+<p>To run the server with PM2</p>
 
 ```
-DEBUG=true nodemon src/server.js
+DEBUG=true pm2 start src/server.js --watch ./
 ```
 
 <article style='background:skyblue'>
