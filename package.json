@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "pm2 start src/server.js",
-    "test": "mocha --reporter spec test"
+    "test": "mocha --reporter spec test",
+    "preinstall": "npm install pm2@latest -g"
   },
   "author": "Shaun Rogers",
   "license": "ISC",
