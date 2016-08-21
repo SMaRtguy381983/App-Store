@@ -8,7 +8,7 @@
       "npm" : "3.10.6"
   },
   "scripts": {
-    "start": "node src/server.js",
+    "start": "pm2 start src/server.js",
     "test": "mocha --reporter spec test"
   },
   "author": "Shaun Rogers",
