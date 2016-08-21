@@ -1,11 +1,16 @@
+
+<body style='background:pink'>
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
+<p>This README is best viewed with Marked 2 -- try it free</p>
+<a href='http://marked2app.com'>Download Marked 2 HERE</a>
+
 <ul style='font-size:1.3em'>What's new in v1.7.0?
   <li style='font-size:.8em'>Removed the dotenv dependency and replaced it with localenvironment package</li>
   <li style='font-size:.8em'>Removed the nodemon dependency and replaced it with PM2 package</li>
 </ul>  
 
 <section style='background:purple'>
-  <h2>Usage</h2>
+  <h2 style='color:white'>Usage</h2>
     <article style='background:skyblue'>
       <h3 style ='color:black'>Production Usage</h3>
     </article>  
@@ -66,11 +71,6 @@ npm start
 <p>To run the server with debug settings</p>
 
 ```
-DEBUG=true npm start
-```
-<p>To run the server with PM2</p>
-
-```
 DEBUG=true pm2 start src/server.js --watch ./
 ```
 
@@ -84,9 +84,36 @@ DEBUG=true pm2 start src/server.js --watch ./
 npm test
 ```
 
+<section style='background:purple'>
+  <h2 style='color:white'>Deployment</h2>
+  <article style='background:skyblue'>
+    <h3 style ='color:black'>Steps for Deployment</h3>
+  </article>
+</section>
+
+  <p>Step 1 - Create a feature branch:</p>
+  ```
+  git checkout -b "name of your new branch" (no quotes)
+  ```
+
+  <p>Step 2 - Add all working files to a commit:</p>
+  ```
+  git add -A
+  ```
+
+  <p>Step 3 - Commit to repo:</p>
+  ```
+  git commit -m "your git repo message"
+  ```
+
+  <p>Step 4 - Push files to master:</p>
+  ```
+  git push "name of branch created in step 1" (no quotes):master
+  ```
+
 
 <section style='background:purple'>
-  <h2>Endpoints/Routes</h2>
+  <h2 style='color:white'>Endpoints/Routes</h2>
     <article style='background:skyblue'>
       <h4 style ='color:black'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
     </article>  
@@ -102,7 +129,7 @@ npm test
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users | http://localhost:3000/api/v1/users |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -112,13 +139,13 @@ npm test
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will GET all the users and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users | http://localhost:3000/api/v1/users |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -136,13 +163,13 @@ This route will GET all the users and return the results as an array of objects.
 ]
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will GET a specific user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/id: | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "ae25e5a4-73db-4969-9f6c-acf8246b7faa",
@@ -152,13 +179,13 @@ This route will GET a specific user and return the results as an object.
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will POST (Update) a specific user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users/:id | http://localhost:3000/api/v1/users/:id |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -168,27 +195,29 @@ This route will POST (Update) a specific user and return the results as an objec
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will DELETE a specific user and return the result of 1, confirming deletion.
 
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/users/:id | http://localhost:3000/api/v1/users |  
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 1
 ```
 
 
-### CRUD for Apps
+<article style='background:skyblue'>
+  <h3 style ='color:black'>CRUD for Apps</h3>
+</article>
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will POST (Create) an app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps | http://localhost:3000/api/v1/apps |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -200,13 +229,13 @@ This route will POST (Create) an app and return the results as an object.
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will GET a specific app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps/id: | http://localhost:3000/api/v1/apps/0032c47b-4a7b-4232-9cc3-6af718244ea8 |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "0032c47b-4a7b-4232-9cc3-6af718244ea8",
@@ -243,13 +272,13 @@ This route will GET a specific app and return the results as an object.
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will GET all the apps for a specific user and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/:id/apps | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa/apps |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -288,13 +317,13 @@ This route will GET all the apps for a specific user and return the results as a
 ]
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will GET all the apps and return the results as an array of objects.
 
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps | http://localhost:3000/api/v1/apps |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 [
   {
@@ -360,13 +389,13 @@ This route will GET all the apps and return the results as an array of objects.
 ]
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will POST (Update) a specific app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/:id |  |
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -379,19 +408,20 @@ This route will POST (Update) a specific app and return the results as an object
 }
 ```
 
-#### What this route does:
+<h4>What this route does:</h4>
 This route will DELETE a specific app and return the result of 1, confirming deletion.
 
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/d281c58e-4447-48b6-82cd-dc2eb90b5fd6 |  
-##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
+<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
 ```
 1
 ```
 
+<section style='background:purple'>
+  <h2 style='color:white'>Semantic Versioning</h2>
+</section>  
+<p>Visit SemVer to get the latest info on Semantic Versioning:</p> <a href='http://semver.org/spec/v2.0.0.html'>Learn about Semantic Versioning HERE</a>
 
-## Semantic Versioning
-Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
-
-###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
+<h6>Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a></h6>
