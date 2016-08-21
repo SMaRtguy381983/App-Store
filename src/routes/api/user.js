@@ -8,10 +8,10 @@ module.exports = (express) => {
   // This route will Read all Users
   router.get('/users', (req, res) => {
     user.all((err) => {
-      console.log('Error occurred while attempting to load all users', err, 0);
+      utilityTool.debug('Error occurred while attempting to load all users', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully loaded all users', data, 1);
+      utilityTool.debug('Successfully loaded all users', data, 1);
       res.status(200).json(data);
     });
   });
@@ -21,10 +21,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     user.one(body, (err) => {
-      console.log('Error occurred while attempting to load a user', err, 0);
+      utilityTool.debug('Error occurred while attempting to load a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully loaded a user', data, 1);
+      utilityTool.debug('Successfully loaded a user', data, 1);
       res.status(200).json(data);
     });
   });
@@ -34,10 +34,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     user.remove(body, (err) => {
-      console.log('Error occurred while attempting to remove a user', err, 0);
+      utilityTool.debug('Error occurred while attempting to remove a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully removed an user', data, 1);
+      utilityTool.debug('Successfully removed an user', data, 1);
       res.status(200).json(data);
     });
   });
@@ -47,10 +47,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     user.update(body, (err) => {
-      console.log('Error occurred while attempting to update a user', err, 0);
+      utilityTool.debug('Error occurred while attempting to update a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully updated a user', data, 1);
+      utilityTool.debug('Successfully updated a user', data, 1);
       res.status(200).json(data);
     });
   });
@@ -59,10 +59,10 @@ module.exports = (express) => {
   router.post('/users', (req, res) => {
     const body = req.body;
     user.add(body, (err) => {
-      console.log('Error occurred while attempting to create a user', err, 0);
+      utilityTool.debug('Error occurred while attempting to create a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully created a user', data, 1);
+      utilityTool.debug('Successfully created a user', data, 1);
       res.status(201).json(data);
     });
   });

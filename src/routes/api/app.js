@@ -1,6 +1,6 @@
 const app = require('../../models/app');
 // Define our log module
-// const utilityTool = require('loot-ytilitu');
+const utilityTool = require('loot-ytilitu');
 
 module.exports = (express) => {
   const router = express.Router();
@@ -13,10 +13,10 @@ module.exports = (express) => {
         nested: true,
       }],
     }, (err) => {
-      console.log('Error occurred while attempting to load all apps', err, 0);
+      utilityTool.debug('Error occurred while attempting to load all apps', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully loaded all apps', data, 1);
+      utilityTool.debug('Successfully loaded all apps', data, 1);
       res.status(200).json(data);
     });
   });
@@ -26,10 +26,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     app.one(body, (err) => {
-      console.log('Error occurred while attempting to load an app', err, 0);
+      utilityTool.debug('Error occurred while attempting to load an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully loaded an app', data, 1);
+      utilityTool.debug('Successfully loaded an app', data, 1);
       res.status(200).json(data);
     });
   });
@@ -39,10 +39,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     app.remove(req.body, (err) => {
-      console.log('Error occurred while attempting to remove an app', err, 0);
+      utilityTool.debug('Error occurred while attempting to remove an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully removed an app', data, 1);
+      utilityTool.debug('Successfully removed an app', data, 1);
       res.status(200).json(data);
     });
   });
@@ -52,10 +52,10 @@ module.exports = (express) => {
     const body = req.body;
     body.id = req.params.id;
     app.update(body, (err) => {
-      console.log('Error occurred while attempting to update an app', err, 0);
+      utilityTool.debug('Error occurred while attempting to update an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully updated an app', data, 1);
+      utilityTool.debug('Successfully updated an app', data, 1);
       res.status(200).json(data);
     });
   });
@@ -64,10 +64,10 @@ module.exports = (express) => {
   router.post('/apps', (req, res) => {
     const body = req.body;
     app.add(body, (err) => {
-      console.log('Error occurred while attempting to create an app', err, 0);
+      utilityTool.debug('Error occurred while attempting to create an app', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully created an app', data, 1);
+      utilityTool.debug('Successfully created an app', data, 1);
       res.status(201).json(data);
     });
   });
@@ -83,10 +83,10 @@ module.exports = (express) => {
         nested: true,
       }],
     }, req.body, (err) => {
-      console.log('Error occurred while attempting to load all apps for a user', err, 0);
+      utilityTool.debug('Error occurred while attempting to load all apps for a user', err, 0);
       res.status(500).json(err);
     }, (data) => {
-      console.log('Successfully loaded all apps for a user', data, 1);
+      utilityTool.debug('Successfully loaded all apps for a user', data, 1);
       res.status(200).json(data);
     });
   });
