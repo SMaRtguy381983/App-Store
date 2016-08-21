@@ -1,6 +1,6 @@
 const user = require('../../models/user');
 // Define our log module
-// const utilityTool = require('loot-ytilitu');
+const utilityTool = require('loot-ytilitu');
 
 module.exports = (express) => {
   const router = express.Router();
