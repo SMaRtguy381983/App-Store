@@ -108,7 +108,7 @@ npm test
 
   <p>Step 4 - Push files to master:</p>
   ```
-  git push "name of branch created in step 1" (no quotes):master
+  git push ProductionServer "name of branch created in step 1" (no quotes):master
   ```
 
 
