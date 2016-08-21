@@ -1,5 +1,3 @@
-// import { express } from 'express';
-
 // Here I set up my constant (non-changing) variables
 const express = require('express');
 
@@ -28,3 +26,4 @@ const server = app.listen(port, () => {
 
 // This line assigns the exported module the value of the constant variable server
 module.exports = server;
+BOGUSNESS
