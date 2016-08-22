@@ -5,6 +5,7 @@
 
 <ul style='font-size:1.3em'>What's new in v1.8.0?
   <li style='font-size:.8em'>Added instructions on how to prepare databases via Postman for Unit Testing</li>
+  <li style='font-size:.8em'>Added a Workflow section that goes step-by-step from creating a new branch to sending that branch to the release branch</li>
 </ul>  
 
 <section style='background:purple'>
@@ -140,6 +141,39 @@ npm test
   git push ProductionServer "name of branch created in step 1" (no quotes):master
   ```
 
+<section style='background:purple'>
+  <h2 style='color:white'>Workflow</h2>
+  <article style='background:skyblue'>
+    <h3 style ='color:black'>Fluid Workflow</h3>
+  </article>
+</section>
+
+<p>Step 1 - Create a feature branch:</p>
+```
+git checkout -b "name of your new branch" (no quotes)
+```
+
+<p>Step 2 - Commit to GitHub:</p>
+```
+git add -A
+git commit -m "your message"
+git push origin "name of your new branch"
+```
+
+<p>Step 3 - Using GitHub merge to master:</p>
+```
+https://github.com/SMaRtguy381983/App-Store
+```
+
+<p>Step 4 - Tag the version:</p>
+```
+git tag vX.X.X (Major, Minor, Patch)
+```
+
+<p>Step 5 - Send to release branch:</p>
+```
+git push origin -u "name of your new branch":release
+```
 
 <section style='background:purple'>
   <h2 style='color:white'>Endpoints/Routes</h2>
