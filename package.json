@@ -1,6 +1,6 @@
 {
   "name": "appstore",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "description": "App Store for Deployment of Web Applications",
   "main": "src/server.js",
   "engines": {
