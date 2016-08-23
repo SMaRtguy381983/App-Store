@@ -1,4 +1,7 @@
 <body style='background:pink'>
+
+https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master
+
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
 <p>This README is best viewed with Marked 2 -- try it free</p>
 <p>Download Marked 2<a href='http://marked2app.com'> HERE</a></p>
