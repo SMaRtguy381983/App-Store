@@ -1,6 +1,6 @@
 <body style='background:pink'>
 
-https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master
+[![App-Store](https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master)](https://codeship.com/projects/169472)
 
 <h1 style='color:red; font-weight:bolder'>App Store README</h1>
 <p>This README is best viewed with Marked 2 -- try it free</p>
