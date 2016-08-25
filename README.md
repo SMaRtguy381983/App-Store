@@ -1,12 +1,16 @@
 [![App-Store](https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master)](https://codeship.com/projects/169472)
 
+---
+
 # **App Store README**
 ##### This README is best viewed with [Marked 2](http://marked2app.com)
 ### What's new in v1.10.0?
   * Added gulp, gulp-git and yargs and implemented various gulp tasks
 
+---
+
 ## **Usage**
-### *Production Usage*    
+### *Production Usage*
 #### Install all dependencies
 ```
 npm i
@@ -27,7 +31,9 @@ npm install pm2@latest -g
 }
 ```
 
-### Development Usage
+---
+
+### *Development Usage*
 ###### *-- do the following after the above production usage*
 #### Install additional dependencies
 ```
@@ -38,7 +44,9 @@ npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-js
 apm i linter-eslint
 ```
 
-### Debug Usage
+---
+
+### *Debug Usage*
 #### To run the server with default settings
 ```
 npm start
@@ -48,7 +56,9 @@ npm start
 DEBUG=true pm2 start src/server.js --watch ./
 ```
 
-### Unit Testing
+---
+
+### *Unit Testing*
 ##### These routes were populated using [Postman](https://www.getpostman.com/')
 #### To have users test data readily available use use POST via Postman and this route:
 ```
@@ -76,27 +86,22 @@ DEBUG=true pm2 start src/server.js --watch ./
 npm test
 ```
 
-## Deployment
-### Steps for Deployment
+---
+
+## **Deployment**
+### *Steps for Deployment*
 #### Step 1 - Create a feature branch:
   ```
   git checkout -b "name of your new branch" (no quotes)
   ```
-#### Step 2 - Add all working files to a commit:
+#### Step 2 - Use the Gulp task *release* to add all files, commit and then push to the release branch of GitHub.
   ```
-  git add -A
-  ```
-#### Step 3 - Commit to repo:
-  ```
-  git commit -m "your git repo message"
-  ```
-#### Step 4 - Push files to master:
-  ```
-  git push ProductionServer "name of branch created in step 1" (no quotes):master
+  DEBUG=true gulp release --type=patch --b featureBranch --m ""
   ```
 
-## Workflow
-### Fluid Workflow
+---
+
+## **Workflow**
 #### Step 1 - Create a feature branch:
 ```
 git checkout -b "name of your new branch" (no quotes)
@@ -115,17 +120,16 @@ https://github.com/SMaRtguy381983/App-Store
 ```
 git tag vX.X.X (Major, Minor, Patch)
 ```
-#### Step 5 - Send to release branch:
-```
-git push origin -u "name of your new branch":release
-```
 
-## Endpoints/Routes
+---
+
+## **Endpoints/Routes**
 #### These routes were populated using Postman](https://www.getpostman.com/')
-### CRUD for Users
+### *CRUD for Users*
 
 #### What this route does:
 This route will POST (Create) a user and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users | http://localhost:3000/api/v1/users |
@@ -140,6 +144,7 @@ This route will POST (Create) a user and return the results as an object.
 ```
 #### What this route does:
 This route will GET all the users and return the results as an array of objects.
+
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users | http://localhost:3000/api/v1/users |
@@ -162,6 +167,7 @@ This route will GET all the users and return the results as an array of objects.
 ```
 #### What this route does:
 This route will GET a specific user and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/id: | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa |
@@ -176,6 +182,7 @@ This route will GET a specific user and return the results as an object.
 ```
 #### What this route does:
 This route will POST (Update) a specific user and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users/:id | http://localhost:3000/api/v1/users/:id |
@@ -190,6 +197,7 @@ This route will POST (Update) a specific user and return the results as an objec
 ```
 #### What this route does:
 This route will DELETE a specific user and return the result of 1, confirming deletion.
+
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/users/:id | http://localhost:3000/api/v1/users |  
@@ -200,6 +208,7 @@ This route will DELETE a specific user and return the result of 1, confirming de
 ### CRUD for Apps
 #### What this route does:
 This route will POST (Create) an app and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps | http://localhost:3000/api/v1/apps |  |
@@ -216,6 +225,7 @@ This route will POST (Create) an app and return the results as an object.
 ```
 #### What this route does:
 This route will GET a specific app and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps/id: | http://localhost:3000/api/v1/apps/0032c47b-4a7b-4232-9cc3-6af718244ea8 |
@@ -257,6 +267,7 @@ This route will GET a specific app and return the results as an object.
 ```
 #### What this route does:
 This route will GET all the apps for a specific user and return the results as an array of objects.
+
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/:id/apps | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa/apps |  |
@@ -300,6 +311,7 @@ This route will GET all the apps for a specific user and return the results as a
 ```
 #### What this route does:
 This route will GET all the apps and return the results as an array of objects.
+
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps | http://localhost:3000/api/v1/apps |
@@ -370,6 +382,7 @@ This route will GET all the apps and return the results as an array of objects.
 ```
 #### What this route does:
 This route will POST (Update) a specific app and return the results as an object.
+
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/:id |  |
@@ -388,6 +401,7 @@ This route will POST (Update) a specific app and return the results as an object
 ```
 #### What this route does:
 This route will DELETE a specific app and return the result of 1, confirming deletion.
+
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/d281c58e-4447-48b6-82cd-dc2eb90b5fd6 |  
@@ -396,7 +410,11 @@ This route will DELETE a specific app and return the result of 1, confirming del
 1
 ```
 
-## Semantic Versioning
+---
+
+## **Semantic Versioning**
 ##### Get the latest info on Semantic Versioning at [SemVer](http://semver.org/spec/v2.0.0.html)
+
+---
 
 ###### *Contributed by [Shaun M. Rogers](mailto:smrogers@fullsail.edu)*
