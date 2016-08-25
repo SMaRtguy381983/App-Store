@@ -2,13 +2,27 @@ const gulp = require('gulp');
 const git = require('gulp-git');
 const argv = require('yargs').argv;
 const utilityTool = require('loot-ytilitu');
+const jsonfile = require('jsonfile');
 
 // Git Release Tasks
 gulp.task('doVersion', () => {
-  const version = '1.10.0';
-
   if (argv.type) {
-    utilityTool.incVersion(version, argv.type);
+    const file = 'package.json';
+
+    jsonfile.readFile(file, (err, obj) => {
+      const version = utilityTool.incVersion(obj.version, argv.type);
+
+      const tempObj = obj;
+      tempObj.version = version;
+
+      jsonfile.writeFile(file, tempObj, { spaces: 2 }, (err2) => {
+        if (err2) {
+          utilityTool.debug(err2, {}, 0);
+        } else {
+          utilityTool.debug('Updated the version successfully!', {}, 1);
+        }
+      });
+    });
   } else {
     utilityTool.debug('--type was not given to gulp, but it must be the version type', {}, 0);
   }
@@ -46,7 +60,7 @@ gulp.task('push', ['commit'], () => {
   }
 });
 
-// DEBUG=true gulp release --b "autoVerBump" --m ""
+// DEBUG=true gulp release --type=patch --b autoVerBump --m ""
 gulp.task('release', ['push'], () => {
   utilityTool.debug('You did everything!', {}, 1);
 });
