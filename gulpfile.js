@@ -4,8 +4,8 @@ const argv = require('yargs').argv;
 const utilityTool = require('loot-ytilitu');
 
 gulp.task('addAll', () => {
-  return gulp.src('./*')
-    .pipe(git.add());
+  return gulp.src('./')
+    .pipe(git.add({ args: '-A' }));
 });
 
 gulp.task('commit', () => {
