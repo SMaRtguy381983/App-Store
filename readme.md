@@ -1,93 +1,149 @@
-<h1 style='color:red; font-weight:bolder'>App Store README</h1>
-<ul style='font-size:1.3em'>What's new in v1.6.0?
-  <li style='font-size:.8em'>Removed the lib folder and its content (utilityTool) and now require the use of the utilityTool through NPM as the uniquely named package: loot.ytilitu
-</ul>  
+[![App-Store](https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master)](https://codeship.com/projects/169472)
 
-<section style='background:purple'>
-  <h2>Usage</h2>
-    <article style='background:skyblue'>
-      <h3 style ='color:black'>Production Usage</h3>
-    </article>  
-</section>    
+---
 
-  <p>Install all dependencies</p>
+# **App Store README**
+##### This README is best viewed with [Marked 2](http://marked2app.com)
 
+---
+
+## **Usage**
+### *Production Usage*
+#### Install all dependencies
 ```
 npm i
 ```
-  <p>Create a .env file in the project root directory and store these values in a .env file</p>
-
+#### Install latest stable version of PM2
 ```
-DB_NAME= <--- Your database name in MySQL
-DB_USER= <--- Your username in MySQL
-DB_PASS= <--- Your password in MySQL
-DB_HOST= <--- Your host name in MySQL
-DB_SCHEMA= <--- Your username in MySQL
-DB_PORT= <--- Your port in MySQL
+npm install pm2@latest -g
 ```
-
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Development Usage</h3>
-</article>  
-
-<h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
-
-<p>Install additional dependencies</p>
-
+#### Create a env.json file in the project root directory and use the below JSON object template, replacing values as necessary
 ```
-npm i -g mocha nodemon eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+{
+  "DB_NAME": "Your database name in MySQL",
+  "DB_USER": "Your username in MySQL",
+  "DB_PASS": "Your password in MySQL",
+  "DB_HOST": "localhost",
+  "DB_SCHEMA": "mysql",
+  "DB_PORT": "3306"
+}
 ```
 
-<p>Install linter package for Atom IDE</p>
+#Create logs folder
+```
+mkdir logs
+```
 
+---
+
+### *Development Usage*
+###### *-- do the following after the above production usage*
+#### Install additional dependencies
+```
+npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+```
+#### Install linter package for Atom IDE
 ```
 apm i linter-eslint
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Debug Usage</h3>
-</article>
+---
 
-<p>To run the server with default settings</p>
-
+### *Debug Usage*
+#### To run the server with default settings
 ```
 npm start
 ```
-<p>To run the server with debug settings</p>
-
+#### To run the server with debug settings
 ```
-DEBUG=true npm start
-```
-<p>To run the server with nodemon</p>
-
-```
-DEBUG=true nodemon src/server.js
+DEBUG=true pm2 start src/server.js --watch ./
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Unit Testing</h3>
-</article>
+---
 
-<p>To run the unit tests</p>
-
+### *Unit Testing*
+##### These routes were populated using [Postman](https://www.getpostman.com/')
+#### To have users test data readily available use use POST via Postman and this route:
+```
+104.236.35.11/api/v1/users
+```
+#### Enter these key:value pairs:
+```
+{
+  "name": " "
+}
+```
+#### To have apps test data readily available use POST via Postman and this route:
+```
+104.236.35.11/api/v1/apps
+```
+#### Enter these key:value pairs:
+```
+{
+  "title": " ",
+  "description": " "
+}
+```
+#### To run the unit tests:
 ```
 npm test
 ```
 
+---
 
-<section style='background:purple'>
-  <h2>Endpoints/Routes</h2>
-    <article style='background:skyblue'>
-      <h4 style ='color:black'>These routes were tested using the Postman application, download it here: https://www.getpostman.com/</h4>
-    </article>  
-</section>    
+## **Deployment**
+### *Steps for Deployment*
+#### Step 1 - Create a feature branch:
+  ```
+  git checkout -b "name of your new branch" (no quotes)
+  ```
+#### Step 2 - Add all working files to a commit:
+  ```
+  git add -A
+  ```
+#### Step 3 - Commit to repo:
+  ```
+  git commit -m "your git repo message"
+  ```
+#### Step 4 - Push files to master:
+  ```
+  git push ProductionServer "name of branch created in step 1" (no quotes):master
+  ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>CRUD for Users</h3>
-</article>
+---
 
-<h4>What this route does:</h4>
-<p>This route will POST (Create) a user and return the results as an object.</p>
+## **Workflow**
+#### Step 1 - Create a feature branch:
+```
+git checkout -b "name of your new branch" (no quotes)
+```
+#### Step 2 - Commit to GitHub:
+```
+git add -A
+git commit -m "your message"
+git push origin "name of your new branch"
+```
+#### Step 3 - Using GitHub merge to master:
+```
+https://github.com/SMaRtguy381983/App-Store
+```
+#### Step 4 - Tag the version:
+```
+git tag vX.X.X (Major, Minor, Patch)
+```
+#### Step 5 - Send to release branch:
+```
+git push origin -u "name of your new branch":release
+```
+
+---
+
+## **Endpoints/Routes**
+#### These routes were populated using Postman](https://www.getpostman.com/')
+### *CRUD for Users*
+
+#### What this route does:
+This route will POST (Create) a user and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
@@ -101,7 +157,6 @@ npm test
   "createdAt": "2016-08-08T03:44:22.000Z"
 }
 ```
-
 #### What this route does:
 This route will GET all the users and return the results as an array of objects.
 
@@ -125,7 +180,6 @@ This route will GET all the users and return the results as an array of objects.
   }
 ]
 ```
-
 #### What this route does:
 This route will GET a specific user and return the results as an object.
 
@@ -141,7 +195,6 @@ This route will GET a specific user and return the results as an object.
   "updatedAt": null
 }
 ```
-
 #### What this route does:
 This route will POST (Update) a specific user and return the results as an object.
 
@@ -157,7 +210,6 @@ This route will POST (Update) a specific user and return the results as an objec
   "updatedAt": "2016-08-08T03:44:45.000Z"
 }
 ```
-
 #### What this route does:
 This route will DELETE a specific user and return the result of 1, confirming deletion.
 
@@ -168,10 +220,7 @@ This route will DELETE a specific user and return the result of 1, confirming de
 ```
 1
 ```
-
-
 ### CRUD for Apps
-
 #### What this route does:
 This route will POST (Create) an app and return the results as an object.
 
@@ -189,7 +238,6 @@ This route will POST (Create) an app and return the results as an object.
   "createdAt": "2016-08-08T03:47:09.000Z"
 }
 ```
-
 #### What this route does:
 This route will GET a specific app and return the results as an object.
 
@@ -232,7 +280,6 @@ This route will GET a specific app and return the results as an object.
   }
 }
 ```
-
 #### What this route does:
 This route will GET all the apps for a specific user and return the results as an array of objects.
 
@@ -277,7 +324,6 @@ This route will GET all the apps for a specific user and return the results as a
   }
 ]
 ```
-
 #### What this route does:
 This route will GET all the apps and return the results as an array of objects.
 
@@ -349,13 +395,13 @@ This route will GET all the apps and return the results as an array of objects.
   }
 ]
 ```
-
 #### What this route does:
 This route will POST (Update) a specific app and return the results as an object.
 
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/:id |  |
+
 ##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
@@ -368,7 +414,6 @@ This route will POST (Update) a specific app and return the results as an object
   "userId": null
 }
 ```
-
 #### What this route does:
 This route will DELETE a specific app and return the result of 1, confirming deletion.
 
@@ -380,8 +425,11 @@ This route will DELETE a specific app and return the result of 1, confirming del
 1
 ```
 
+---
 
-## Semantic Versioning
-Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
+## **Semantic Versioning**
+##### Get the latest info on Semantic Versioning at [SemVer](http://semver.org/spec/v2.0.0.html)
 
-###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
+---
+
+###### *Contributed by [Shaun M. Rogers](mailto:smrogers@fullsail.edu)*
