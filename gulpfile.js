@@ -32,16 +32,14 @@ gulp.task('push', ['commit'], () => {
     git.push('origin', `${argv.b}:release`, (err) => {
       if (err) throw err;
     });
+  } else {
+    utilityTool.debug('--b was not given to the gulp cmd, but it must be a feature branch', {}, 0);
   }
-
-  utilityTool.debug('--b was not given to the gulp cmd, but it must be the feature branch', {}, 0);
-
-  return false;
 });
 
 // DEBUG=true gulp release --b "autoVerBump" --m ""
 gulp.task('release', ['push'], () => {
-  utilityTool.debug('You are doing everything!', {}, 1);
+  utilityTool.debug('You did everything!', {}, 1);
 });
 
 // Default task
