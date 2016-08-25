@@ -1,37 +1,21 @@
-<body style='background:pink'>
-
 [![App-Store](https://codeship.com/projects/a08b6e10-48ec-0134-0bf2-52b63a9a4ec4/status?branch=master)](https://codeship.com/projects/169472)
 
-<h1 style='color:red; font-weight:bolder'>App Store README</h1>
-<p>This README is best viewed with Marked 2 -- try it free</p>
-<p>Download Marked 2<a href='http://marked2app.com'> HERE</a></p>
+# **App Store README**
+##### This README is best viewed with [Marked 2](http://marked2app.com)
+### What's new in v1.10.0?
+  * Added gulp, gulp-git and yargs and implemented various gulp tasks
 
-<ul style='font-size:1.3em'>What's new in v1.8.0?
-  <li style='font-size:.8em'>Added instructions on how to prepare databases via Postman for Unit Testing</li>
-  <li style='font-size:.8em'>Added a Workflow section that goes step-by-step from creating a new branch to sending that branch to the release branch</li>
-</ul>  
-
-<section style='background:purple'>
-  <h2 style='color:white'>Usage</h2>
-    <article style='background:skyblue'>
-      <h3 style ='color:black'>Production Usage</h3>
-    </article>  
-</section>    
-
-  <p>Install all dependencies</p>
-
+## **Usage**
+### *Production Usage*    
+#### Install all dependencies
 ```
 npm i
 ```
-
-<p>Install latest stable version of PM2</p>
-
+#### Install latest stable version of PM2
 ```
 npm install pm2@latest -g
 ```
-
-  <p>Create a env.json file in the project root directory and use the below JSON object template, replacing values as necessary</p>
-
+#### Create a env.json file in the project root directory and use the below JSON object template, replacing values as necessary
 ```
 {
   "DB_NAME": "Your database name in MySQL",
@@ -43,161 +27,109 @@ npm install pm2@latest -g
 }
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Development Usage</h3>
-</article>  
-
-<h5 style = 'font-style:italic'> -- do the following after the above production usage</h5>
-
-<p>Install additional dependencies</p>
-
-
+### Development Usage
+###### *-- do the following after the above production usage*
+#### Install additional dependencies
 ```
 npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
-
-<p>Install linter package for Atom IDE</p>
-
+#### Install linter package for Atom IDE
 ```
 apm i linter-eslint
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Debug Usage</h3>
-</article>
-
-<p>To run the server with default settings</p>
-
+### Debug Usage
+#### To run the server with default settings
 ```
 npm start
 ```
-<p>To run the server with debug settings</p>
-
+#### To run the server with debug settings
 ```
 DEBUG=true pm2 start src/server.js --watch ./
 ```
 
-<article style='background:skyblue'>
-  <h3 style ='color:black'>Unit Testing</h3>
-  <h4 style ='color:black'>These routes were populated using the Postman application, download it <a href='https://www.getpostman.com/'>HERE</a></h4>
-</article>
-
-<p>To have users test data readily available use use POST via Postman and this route:</p>
-
+### Unit Testing
+##### These routes were populated using [Postman](https://www.getpostman.com/')
+#### To have users test data readily available use use POST via Postman and this route:
 ```
 104.236.35.11/api/v1/users
 ```
-<p>Enter these key:value pairs:</p>
-
+#### Enter these key:value pairs:
 ```
 {
   "name": " "
 }
 ```
-
-
-<p>To have apps test data readily available use POST via Postman and this route:</p>
-
+#### To have apps test data readily available use POST via Postman and this route:
 ```
 104.236.35.11/api/v1/apps
 ```
-<p>Enter these key:value pairs:</p>
-
+#### Enter these key:value pairs:
 ```
 {
   "title": " ",
   "description": " "
 }
 ```
-
-<p>To run the unit tests</p>
-
-
+#### To run the unit tests:
 ```
 npm test
 ```
 
-<section style='background:purple'>
-  <h2 style='color:white'>Deployment</h2>
-  <article style='background:skyblue'>
-    <h3 style ='color:black'>Steps for Deployment</h3>
-  </article>
-</section>
-
-  <p>Step 1 - Create a feature branch:</p>
+## Deployment
+### Steps for Deployment
+#### Step 1 - Create a feature branch:
   ```
   git checkout -b "name of your new branch" (no quotes)
   ```
-
-  <p>Step 2 - Add all working files to a commit:</p>
+#### Step 2 - Add all working files to a commit:
   ```
   git add -A
   ```
-
-  <p>Step 3 - Commit to repo:</p>
+#### Step 3 - Commit to repo:
   ```
   git commit -m "your git repo message"
   ```
-
-  <p>Step 4 - Push files to master:</p>
+#### Step 4 - Push files to master:
   ```
   git push ProductionServer "name of branch created in step 1" (no quotes):master
   ```
 
-<section style='background:purple'>
-  <h2 style='color:white'>Workflow</h2>
-  <article style='background:skyblue'>
-    <h3 style ='color:black'>Fluid Workflow</h3>
-  </article>
-</section>
-
-<p>Step 1 - Create a feature branch:</p>
+## Workflow
+### Fluid Workflow
+#### Step 1 - Create a feature branch:
 ```
 git checkout -b "name of your new branch" (no quotes)
 ```
-
-<p>Step 2 - Commit to GitHub:</p>
+#### Step 2 - Commit to GitHub:
 ```
 git add -A
 git commit -m "your message"
 git push origin "name of your new branch"
 ```
-
-<p>Step 3 - Using GitHub merge to master:</p>
+#### Step 3 - Using GitHub merge to master:
 ```
 https://github.com/SMaRtguy381983/App-Store
 ```
-
-<p>Step 4 - Tag the version:</p>
+#### Step 4 - Tag the version:
 ```
 git tag vX.X.X (Major, Minor, Patch)
 ```
-
-<p>Step 5 - Send to release branch:</p>
+#### Step 5 - Send to release branch:
 ```
 git push origin -u "name of your new branch":release
 ```
 
-<section style='background:purple'>
-  <h2 style='color:white'>Endpoints/Routes</h2>
-    <article style='background:skyblue'>
-      <h4 style ='color:black'>These routes were populated using the Postman application, download it  <a href='https://www.getpostman.com/'>HERE</a></h4>
-    </article>  
-</section>    
+## Endpoints/Routes
+#### These routes were populated using Postman](https://www.getpostman.com/')
+### CRUD for Users
 
-<hr>
-
-  <h3 style ='background:skyblue;color:black'>CRUD for Users</h3>
-
-  <h4>What this route does:</h4>
-  This route will POST (Create) a user and return the results as an object.
-
+#### What this route does:
+This route will POST (Create) a user and return the results as an object.
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users | http://localhost:3000/api/v1/users |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -206,16 +138,12 @@ git push origin -u "name of your new branch":release
   "createdAt": "2016-08-08T03:44:22.000Z"
 }
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will GET all the users and return the results as an array of objects.
-
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users | http://localhost:3000/api/v1/users |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 [
   {
@@ -232,16 +160,12 @@ This route will GET all the users and return the results as an array of objects.
   }
 ]
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will GET a specific user and return the results as an object.
-
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/id: | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "ae25e5a4-73db-4969-9f6c-acf8246b7faa",
@@ -250,16 +174,12 @@ This route will GET a specific user and return the results as an object.
   "updatedAt": null
 }
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will POST (Update) a specific user and return the results as an object.
-
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/users/:id | http://localhost:3000/api/v1/users/:id |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "c8c2f2ce-085b-4aa5-9c05-9fa07b17bafc",
@@ -268,37 +188,22 @@ This route will POST (Update) a specific user and return the results as an objec
   "updatedAt": "2016-08-08T03:44:45.000Z"
 }
 ```
-
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will DELETE a specific user and return the result of 1, confirming deletion.
-
-
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/users/:id | http://localhost:3000/api/v1/users |  
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 1
 ```
-
-<hr>
-
-<article style='background:skyblue'>
-  <h3 style ='color:black'>CRUD for Apps</h3>
-</article>
-
-<h4>What this route does:</h4>
+### CRUD for Apps
+#### What this route does:
 This route will POST (Create) an app and return the results as an object.
-
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps | http://localhost:3000/api/v1/apps |  |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -309,16 +214,12 @@ This route will POST (Create) an app and return the results as an object.
   "createdAt": "2016-08-08T03:47:09.000Z"
 }
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will GET a specific app and return the results as an object.
-
-
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps/id: | http://localhost:3000/api/v1/apps/0032c47b-4a7b-4232-9cc3-6af718244ea8 |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "0032c47b-4a7b-4232-9cc3-6af718244ea8",
@@ -354,17 +255,12 @@ This route will GET a specific app and return the results as an object.
   }
 }
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will GET all the apps for a specific user and return the results as an array of objects.
-
-
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/users/:id/apps | http://localhost:3000/api/v1/users/ae25e5a4-73db-4969-9f6c-acf8246b7faa/apps |  |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 [
   {
@@ -402,16 +298,12 @@ This route will GET all the apps for a specific user and return the results as a
   }
 ]
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will GET all the apps and return the results as an array of objects.
-
 | Method | URL | Link |
 |---|---|---|
 | GET | /api/v1/apps | http://localhost:3000/api/v1/apps |
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 [
   {
@@ -476,16 +368,13 @@ This route will GET all the apps and return the results as an array of objects.
   }
 ]
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will POST (Update) a specific app and return the results as an object.
-
 | Method | URL | Link |
 |---|---|---|
 | POST | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/:id |  |
 
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 {
   "id": "d281c58e-4447-48b6-82cd-dc2eb90b5fd6",
@@ -497,28 +386,17 @@ This route will POST (Update) a specific app and return the results as an object
   "userId": null
 }
 ```
-
-<h4>What this route does:</h4>
+#### What this route does:
 This route will DELETE a specific app and return the result of 1, confirming deletion.
-
 | Method | URL | Link |
 |---|---|---|
 | DELETE | /api/v1/apps/:id | http://localhost:3000/api/v1/apps/d281c58e-4447-48b6-82cd-dc2eb90b5fd6 |  
-
-<h5>The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:</h5>
-
+##### The above response is shown below in it's semantic properly formatted version as it appears via the Postman application:
 ```
 1
 ```
 
-<hr>
+## Semantic Versioning
+##### Get the latest info on Semantic Versioning at [SemVer](http://semver.org/spec/v2.0.0.html)
 
-
-<section style='background:purple'>
-  <h2 style='color:white'>Semantic Versioning</h2>
-</section>  
-<p>Visit SemVer to get the latest info on Semantic Versioning:</p>
-<p>Learn about Semantic Versioning
-<a href='http://semver.org/spec/v2.0.0.html'> HERE</a></p>
-
-<h6>Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a></h6>
+###### *Contributed by [Shaun M. Rogers](mailto:smrogers@fullsail.edu)*

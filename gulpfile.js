@@ -4,8 +4,17 @@ const argv = require('yargs').argv;
 const utilityTool = require('loot-ytilitu');
 
 // Git Release Tasks
+gulp.task('doVersion', () => {
+  const version = '1.10.0';
 
-gulp.task('addAll', () => {
+  if (argv.type) {
+    utilityTool.incVersion(version, argv.type);
+  } else {
+    utilityTool.debug('--type was not given to gulp, but it must be the version type', {}, 0);
+  }
+});
+
+gulp.task('addAll', ['doVersion'], () => {
   utilityTool.debug('Hey! You are adding all!', {}, 1);
 
   return gulp.src('./')
