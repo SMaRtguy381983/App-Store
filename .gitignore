@@ -9,3 +9,4 @@ out
 build
 logs
 *.sh
+env.json
