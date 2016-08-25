@@ -370,4 +370,4 @@ This route will DELETE a specific app and return the result of 1, confirming del
 ## Versioning
 Visit SemVer to get the latest info on Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
-###### Contributed by <a href="mailto:smrogers@fullsail.edu">Shaun M. Rogers</a>
+###### Contributed by [Shaun M. Rogers](mailto:smrogers@fullsail.edu)</a>
