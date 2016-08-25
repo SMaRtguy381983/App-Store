@@ -20,17 +20,28 @@ gulp.task('commit', ['addAll'], () => {
       .pipe(git.commit(argv.m));
   }
 
-  utilityTool.debug('--m was not given to the gulp cmd, but it must be the commit message', {}, 1);
+  utilityTool.debug('--m was not given to the gulp cmd, but it must be the commit message', {}, 0);
 
   return false;
 });
 
 gulp.task('push', ['commit'], () => {
-  // utilityTool.debug('Push it real good!', {}, 1);
+  if (argv.b) {
+    utilityTool.debug('Push it real good!', {}, 1);
+
+    git.push('origin', `${argv.b}:release`, (err) => {
+      if (err) throw err;
+    });
+  }
+
+  utilityTool.debug('--b was not given to the gulp cmd, but it must be the feature branch', {}, 0);
+
+  return false;
 });
 
+// DEBUG=true gulp release --b "autoVerBump" --m ""
 gulp.task('release', ['push'], () => {
-  // utilityTool.debug('You are doing everything!', {}, 1);
+  utilityTool.debug('You are doing everything!', {}, 1);
 });
 
 // Default task
