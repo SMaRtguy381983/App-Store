@@ -40,6 +40,11 @@ DB_SCHEMA=mysql <--- Your username in MySQL
 DB_PORT=8889 <--- Your port in MySQL
 ```
 
+Create logs folder
+```
+mkdir logs
+```
+
 ## Usage
 
 To run the server with default settings
