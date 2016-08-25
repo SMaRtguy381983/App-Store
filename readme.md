@@ -4,8 +4,6 @@
 
 # **App Store README**
 ##### This README is best viewed with [Marked 2](http://marked2app.com)
-### What's new in v1.10.0?
-  * Added gulp, gulp-git and yargs and implemented various gulp tasks
 
 ---
 
