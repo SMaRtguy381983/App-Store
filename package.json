@@ -9,8 +9,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": "mocha --reporter spec test",
-    "preinstall": "npm install pm2@latest -g"
+    "test": "mocha --reporter spec test"
   },
   "author": "Shaun Rogers",
   "license": "ISC",
