@@ -4,8 +4,6 @@
 
 # **App Store README**
 ##### This README is best viewed with [Marked 2](http://marked2app.com)
-### What's new in v1.10.0?
-  * Added gulp, gulp-git and yargs and implemented various gulp tasks
 
 ---
 
@@ -14,10 +12,6 @@
 #### Install all dependencies
 ```
 npm i
-```
-#### Install latest stable version of PM2
-```
-npm install pm2@latest -g
 ```
 #### Create a env.json file in the project root directory and use the below JSON object template, replacing values as necessary
 ```
@@ -31,13 +25,18 @@ npm install pm2@latest -g
 }
 ```
 
+#Create logs folder
+```
+mkdir logs
+```
+
 ---
 
 ### *Development Usage*
 ###### *-- do the following after the above production usage*
 #### Install additional dependencies
 ```
-npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+npm i -g mocha eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react pm2
 ```
 #### Install linter package for Atom IDE
 ```
@@ -53,7 +52,7 @@ npm start
 ```
 #### To run the server with debug settings
 ```
-DEBUG=true pm2 start src/server.js --watch ./
+DEBUG=true pm2 start src/server.js --watch
 ```
 
 ---
@@ -94,9 +93,17 @@ npm test
   ```
   git checkout -b "name of your new branch" (no quotes)
   ```
-#### Step 2 - Use the Gulp task *release* to add all files, commit and then push to the release branch of GitHub.
+#### Step 2 - Add all working files to a commit:
   ```
-  DEBUG=true gulp release --type=patch --b featureBranch --m ""
+  git add -A
+  ```
+#### Step 3 - Commit to repo:
+  ```
+  git commit -m "your git repo message"
+  ```
+#### Step 4 - Push files to master:
+  ```
+  git push ProductionServer "name of branch created in step 1" (no quotes):master
   ```
 
 ---
@@ -119,6 +126,10 @@ https://github.com/SMaRtguy381983/App-Store
 #### Step 4 - Tag the version:
 ```
 git tag vX.X.X (Major, Minor, Patch)
+```
+#### Step 5 - Send to release branch:
+```
+git push origin -u "name of your new branch":release
 ```
 
 ---
