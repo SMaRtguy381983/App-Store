@@ -21,7 +21,7 @@ app.use('/', require('./routes')(express));
 
 // This code starts the server and prints a utilityTool.debug to the terminal
 const server = app.listen(port, () => {
-  utilityTool.debug(`The server Active on ${port}`, {}, 1);
+  utilityTool.debug(`Server Active on ${port}`, {}, 1);
 });
 
 // This line assigns the exported module the value of the constant variable server
