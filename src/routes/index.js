@@ -3,7 +3,7 @@ module.exports = (express) => {
 
   router.post('/status', (req, res) => {
     res.json({
-      healthy: true,
+      healthy: false,
     });
   });
 
